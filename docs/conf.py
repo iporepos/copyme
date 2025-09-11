@@ -1,6 +1,6 @@
 # SPHINX CONFIGURATION FILE
 # #######################################################################
-# This is a simple template for the modern configuration file for sphin
+# This is a simple template for the modern configuration file for sphinx
 
 # INSTRUCTIONS
 # ***********************************************************************
