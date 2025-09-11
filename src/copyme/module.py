@@ -20,7 +20,16 @@ Examples
 --------  
 todo docstring  
 {Examples in rST} 
-  
+
+Print a message
+
+.. code-block:: python
+
+    # print message
+    print("Hello world!")
+    # [Output] >> 'Hello world!'
+
+
 """  
   
 # ***********************************************************************  
@@ -28,41 +37,39 @@ todo docstring
 # ***********************************************************************  
 # import modules from other libs  
   
-  
 # Native imports  
 # =======================================================================  
 # import {module}  
-  
+# ... {develop}
   
 # External imports  
 # =======================================================================  
 # import {module}  
-  
+# ... {develop}
   
 # Project-level imports  
 # =======================================================================  
 # import {module}  
-  
+# ... {develop}
   
   
 # ***********************************************************************  
 # CONSTANTS  
 # ***********************************************************************  
 # define constants in uppercase  
-  
-  
-# Project-level  
+    
+# CONSTANTS -- Project-level  
 # =======================================================================  
-# {develop}  
+# ... {develop}  
   
 # Subsubsection example  
 # -----------------------------------------------------------------------  
 HELLO = "Hello World!"  # example  
+# ... {develop}
   
-  
-# Module-level  
+# CONSTANTS -- Module-level  
 # =======================================================================  
-# {develop}  
+# ... {develop}   
   
   
   
@@ -70,8 +77,7 @@ HELLO = "Hello World!"  # example
 # FUNCTIONS  
 # ***********************************************************************  
   
-  
-# Project-level  
+# FUNCTIONS -- Project-level  
 # =======================================================================  
   
 # Demo example  
@@ -80,20 +86,20 @@ def myfunc(parameter1):
     # todo docstring  
     print(parameter1)  
     return None  
+
+# ... {develop}
   
-  
-# Module-level  
+# FUNCTIONS -- Module-level  
 # =======================================================================  
-# {develop}  
+# ... {develop}  
   
   
-  
+
 # ***********************************************************************  
 # CLASSES  
 # ***********************************************************************  
   
-  
-# Project-level  
+# CLASSES -- Project-level  
 # =======================================================================  
   
 # Demo example  
@@ -123,28 +129,30 @@ class MyClass:
     # Static methods
     # -------------------------------------------------------------------
     @staticmethod
-    def myprint(s):
+    def print_message(s="Hello world!"):
         # todo docstring
         print(s)
         return None
+
+# ... {develop}
   
-  
-# Module-level  
+# CLASSES -- Module-level  
 # =======================================================================  
-# {develop}  
+# ... {develop}  
+
   
-  
-  
+
 # ***********************************************************************  
 # SCRIPT  
 # ***********************************************************************  
 # standalone behaviour as a script  
-  
 if __name__ == "__main__":  
   
     # Script section  
     # ===================================================================       
-    print("hello world!")  
-  
+    print("Hello world!")  
+    # ... {develop}
+
     # Script subsection  
     # -------------------------------------------------------------------
+    # ... {develop}
