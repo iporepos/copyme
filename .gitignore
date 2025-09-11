@@ -1,3 +1,57 @@
+# GIT IGNORE CONFIGURATION FILE
+########################################################################
+# This file sets everything that Git will NOT track in the project
+
+# ***********************************************************************
+# CUSTOM IGNORES
+# ***********************************************************************
+# WARNING: 
+# You may want to change this custom ignores conventions so check it out
+
+# Files
+# =======================================================================
+
+# Non-sense script files
+# -----------------------------------------------------------------------
+bench*.py
+# ... [ADD MORE IF NEEDED]
+
+# Deprecated files (e.g. '__mymodule.py')
+# -----------------------------------------------------------------------
+__*.*
+# ... [ADD MORE IF NEEDED]
+
+# Heavy data files
+# -----------------------------------------------------------------------
+*.zip
+# ... [ADD MORE IF NEEDED]
+
+# Folders
+# =======================================================================
+
+# Tests
+# -----------------------------------------------------------------------
+# ignore folders in tests
+
+# any subfolder under tests/data/ is ignored
+tests/data/*/
+
+# outputs folder is fully ignored
+tests/outputs/
+
+# Non-sense folders
+# -----------------------------------------------------------------------
+extra/
+misc/
+scripts/
+old/
+# ... [ADD MORE IF NEEDED]
+
+
+# ***********************************************************************
+# GITHUB STANDARD IGNORES
+# ***********************************************************************
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
