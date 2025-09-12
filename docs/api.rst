@@ -22,7 +22,21 @@ in porttitor lacus lobortis vitae. In a lacinia nisl.
 
    copyme
 
+
 .. autosummary::
    :toctree: generated
 
    copyme.module
+
+
+.. autosummary::
+   :toctree: generated
+
+   copyme.mypackage
+
+
+.. autosummary::
+   :toctree: generated
+
+   copyme.mypackage.submodule
+

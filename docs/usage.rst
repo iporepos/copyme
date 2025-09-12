@@ -21,11 +21,20 @@ Installation
 
 .. develop installation instructions [CHANGE THIS]:
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Nulla mollis tincidunt erat eget iaculis.
-Mauris gravida ex quam, in porttitor lacus lobortis vitae.
-In a lacinia nisl. Pellentesque habitant morbi tristique senectus
-et netus et malesuada fames ac turpis egestas. Morbi et tempor sem.
+For causal users, add ``copyme`` to a python 3 environment via terminal:
+
+.. code-block:: console
+
+    python -m pip install git+https://github.com/iporepos/copyme.git@main
+
+Now test some basic scripting:
+
+.. code-block:: python
+
+    from copyme import module
+    n = module.add(1, 2)
+    print(n)
+    # Output >>> 3
 
 .. _guides:
 
