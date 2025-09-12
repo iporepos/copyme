@@ -6,12 +6,12 @@
 
 .. some cool badges on top [CHANGE THIS]:
 
-..  image:: https://img.shields.io/badge/Python-%23316192.svg?logo=python&logoColor=fff
+.. image:: https://img.shields.io/badge/Python-%23316192.svg?logo=python&logoColor=fff
    :alt: Python
 
 .. setup major dependencies badges [CHANGE THIS]:
 
-..  image:: https://img.shields.io/badge/Sphinx-150458?logo=sphinx&logoColor=fff
+.. image:: https://img.shields.io/badge/Sphinx-150458?logo=sphinx&logoColor=fff
    :alt: Sphinx
 
 .. a cool logo on top. replace or remove if appropriate [CHANGE THIS]:
