@@ -152,25 +152,6 @@ def load_data():
     df = pd.read_csv(DATA_FILE, sep=";")
     return df
 
-'''
-def download_dataset(name, url, overwrite=True):
-    # todo docstring
-    testprint(f"downloading dataset {name} from {url}")
-    # setup paths
-    dataset_path = DATA_DIR / name
-    zip_path = DATA_DIR / f"{name}.zip"
-
-    # Download zip (handles URL/network errors)
-    download_zip(url, zip_path)
-
-    # Extract and cleanup
-    extract_and_cleanup(zip_path, dataset_path, overwrite=overwrite)
-
-    return dataset_path
-
-'''
-
-
 # ... {develop}
 
 # Module-level
@@ -224,26 +205,6 @@ def extract_zip(file_path, extract_to):
     # todo docstring
     with zipfile.ZipFile(file_path, 'r') as zip_ref:
         zip_ref.extractall(extract_to)
-
-
-
-'''
-def download_zip(url, zip_path):
-    # todo docstring
-    try:
-        print(testprint(f"downloading dataset from {url}..."))
-        response = requests.get(url, stream=True, timeout=30)
-        response.raise_for_status()  # Raises HTTPError for bad HTTP responses
-    except requests.exceptions.RequestException as e:
-        raise DatasetDownloadError(f"Failed to download dataset from {url}: {e}")
-
-    with open(target_path, "wb") as f:
-        for chunk in response.iter_content(chunk_size=8192):
-            f.write(chunk)
-    print(testprint(f"saved zip to {target_path}"))
-    return None
-
-'''
 
 
 # ... {develop}

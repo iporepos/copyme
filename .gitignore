@@ -2,11 +2,19 @@
 ########################################################################
 # This file sets everything that Git will NOT track in the project
 
+
+# TEMPLATE INSTRUCTIONS
 # ***********************************************************************
-# CUSTOM IGNORES
+# 1) look for '[CHANGE THIS]' for mandatory modifications
+# 2) look for '[CHECK THIS]' for possible modifications
+# 3) look for '[EXAMPLE]' for simple examples (comment or uncomment it if needed)
+# 4) look for '[ADD MORE IF NEDDED]' for possible extra features
+# 5) placeholders are designated by curly braces: {replace-this}
+
+
+# CUSTOM IGNORE STATEMENTS
 # ***********************************************************************
-# WARNING: 
-# You may want to change this custom ignores conventions so check it out
+# [CHECK THIS] This section applies custom ignores that you may want to change
 
 # Files
 # =======================================================================
@@ -16,7 +24,7 @@
 bench*.py
 # ... [ADD MORE IF NEEDED]
 
-# Deprecated files (e.g. '__mymodule.py')
+# Deprecated files conventions (e.g. '__mymodule.py')
 # -----------------------------------------------------------------------
 __*.*
 # ... [ADD MORE IF NEEDED]
@@ -48,9 +56,9 @@ old/
 # ... [ADD MORE IF NEEDED]
 
 
+# GITHUB STANDARD IGNORE STATEMENTS
 # ***********************************************************************
-# GITHUB STANDARD IGNORES
-# ***********************************************************************
+# Below follows a template from GitHub
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

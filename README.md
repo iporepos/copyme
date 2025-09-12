@@ -1,6 +1,8 @@
 ![Top Language](https://img.shields.io/github/languages/top/iporepos/copyme)
-![](https://img.shields.io/badge/status-development-yellow.svg)
+![Status](https://img.shields.io/badge/status-development-yellow.svg)
+[![Documentation](https://img.shields.io/badge/docs-online-brightgreen)](https://iporepos.github.io/copyme/)
 [![Docs Status](https://github.com/iporepos/copyme/actions/workflows/docs.yml/badge.svg)](https://github.com/iporepos/copyme/actions/workflows/docs.yml)
+
 
 <a logo>
 <img src="https://raw.githubusercontent.com/iporepos/copyme/master/docs/figs/logo.png" height="130" width="130">
@@ -16,10 +18,56 @@ Use this repository as a template for developing a python library or package.
 
 ---
 
-# Layout
+# Templates
+
+When copying files from this repo, remember that they are templates. So:
+
+1) look for '[CHANGE THIS]' for mandatory modifications;
+2) look for '[CHECK THIS]' for possible modifications;
+3) look for '[EXAMPLE]' for simple examples (comment or uncomment it if needed);
+4) look for '[ADD MORE IF NEDDED]' for possible extra features;
+5) placeholders are designated by curly braces: '{replace-this}'.
+
+
+---
+
+# Configuration Files
+
+This repository relies on several **configuration files** that are essential for the proper functioning of the template. Each file has a specific role, and some of them work together, so they should be edited thoughtfully. Below is an overview of the main configuration files and what you should know about them.
+
+> ![Note] 
+> All files are commented with recommended actions and extra steps.
+
+## `pyproject.toml`
+
+This is the most important configuration file in the repository. It manages the project’s dependencies, build system, and other settings. Make sure to update this file if you add new dependencies or change the project structure. Proper configuration here is crucial for both development and continuous integration.
+
+## `.gitignore`
+
+This file defines which files and folders should be ignored by Git. It is important because it prevents unnecessary or heavy files from being included in commits, keeping the repository clean. You can add patterns here for auxiliary files, large datasets, or temporary outputs that should not be tracked.
+
+## `docs/conf.py`
+
+This file contains the configuration for Sphinx, the documentation builder used in this project. It sets the theme, handles unused modules, and ensures that the documentation builds correctly. Any changes to the project’s structure or modules may require updates to this file to avoid broken documentation builds.
+
+## `.github/workflows/docs.yml`
+
+This GitHub Actions workflow automates the build of the documentation online. It relies on the other configuration files, particularly `pyproject.toml` and `docs/conf.py`. If you modify dependencies or the documentation setup, make sure the workflow still runs correctly. 
+
+> ![Note] 
+> Some extra steps are required for building the docs online.
+
+## `tests/conftest.py`
+
+This module contains configurations for the test suite. You are free to modify functions, classes, etc, to fit your development needs. It already includes some pre-defined tests that serve as examples or starting points.
+
+
+---
+
+# Repo layout
 
 A standard python repo may use the following layout. 
-This layout is known as `src` layout, since it stores the source code under a `src/repo` folder.
+This layout is known as `src` layout, since it stores the source code under a `src/{repo}` folder.
 
 ```txt
 copyme/
@@ -29,18 +77,25 @@ copyme/
 ├── .gitignore                    # [CHECK THIS] configuration of git vcs ignoring system
 ├── pyproject.toml                # [CHECK THIS] configuration of python project
 ├── MANIFEST.in                   # [CHECK THIS] configuration of source distribution
-├── .venv/                        # [ignored by git] virtual environment (recommended)
+│
+├── .venv/                        # [ignored by git] virtual environment (recommended for development)
+│
+├── .github/                      # github folder
+│    └── workflows/               # folder for continuous integration services
+│         └── docs.yml            # [CHECK THIS] configuration file for documentation build and deploy
 │
 ├── src/                          # source code folder
-│    └── copyme/                  # library root
+│    └── copyme/                  # [CHANGE THIS] source code root
 │         ├── __init__.py         # template init file
 │         ├── module.py           # template module
+│         ├── ...                 # develop your modules
 │         ├── mypackage/          # template package
 │         │    ├── __init__.py
 │         │    └── submodule.py
 │         └── data/               # run-time data
+│              └── src_data.csv   # dummy data file
 │
-├── tests/                        # testing scripts
+├── tests/                        # testing code folder
 │    ├── conftest.py              # [CHECK THIS] configuration file of tests
 │    ├──unit/                     # unit tests package     
 │    │    ├── __init__.py
@@ -54,15 +109,15 @@ copyme/
 │    │     └── dataset1/          # [ignored by git] subfolders in data
 │    └── outputs/                 # [ignored by git] tests outputs
 │
-├── docs/                         # documentation resources  
+├── docs/                         # documentation folder
 │    ├── about.rst                # info about the repo
 │    ├── api.rst                  # api reference using sphinx autodoc
 │    ├── conf.py                  # [CHECK THIS] configuration file for sphinx
 │    ├── dummy.md                 # markdown docs also works
 │    ├── index.rst                # home page for documentation
 │    ├── usage.rst                # instructions for using this repo
-│    ├── make.bat                 # sphinx auxiliar file (optional)
-│    ├── Makefile                 # sphinx auxiliar file (optional)
+│    ├── make.bat                 # (optional) sphinx auxiliar file 
+│    ├── Makefile                 # (optional) sphinx auxiliar file 
 │    ├── figs/                    # figs-only files
 │    │    ├── logo.png
 │    │    ├── logo.svg

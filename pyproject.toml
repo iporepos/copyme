@@ -1,16 +1,17 @@
-# CONFIGURATION FILE
+# PROJECT CONFIGURATION FILE
 # #######################################################################
 # This is a simple template for the modern configuration file for python projets.
 
-# INSTRUCTIONS
+
+# TEMPLATE INSTRUCTIONS
 # ***********************************************************************
-# To adjust this to your project, you may want to:
 # 1) look for '[CHANGE THIS]' for mandatory modifications
 # 2) look for '[CHECK THIS]' for possible modifications
 # 3) look for '[EXAMPLE]' for simple examples (comment or uncomment it if needed)
-# 3) look for '[ADD MORE IF NEDDED]' for possible extra features
+# 4) look for '[ADD MORE IF NEDDED]' for possible extra features
+# 5) placeholders are designated by curly braces: {replace-this}
 
-# ***********************************************************************
+
 # BUILT SYSTEM CONFIG
 # ***********************************************************************
 [build-system]
@@ -35,7 +36,6 @@ build-backend = "setuptools.build_meta"
 # - Safe to leave as-is unless you are using a non-standard build system.
 
 
-# ***********************************************************************
 # PROJECT METADATA
 # ***********************************************************************
 [project]
@@ -114,7 +114,6 @@ dependencies = [
 
 
 
-# ***********************************************************************
 # OPTIONAL DEPENDENCIES
 # ***********************************************************************
 
@@ -154,7 +153,6 @@ docs = [
 
 
 
-# ***********************************************************************
 # URLS
 # ***********************************************************************
 [project.urls]
@@ -162,8 +160,7 @@ docs = [
 
 
 
-# ***********************************************************************
 # SETUPTOOLS
 # ***********************************************************************
 [tool.setuptools.packages.find]
-where = ["src"]  # <-- Tell setuptools to look for packages in /src
+where = ["src"]  # <-- [CHECK THIS] Tell setuptools to look for packages in /src

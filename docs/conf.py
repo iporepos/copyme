@@ -1,18 +1,18 @@
 # SPHINX CONFIGURATION FILE
 # #######################################################################
 # This is a simple template for the modern configuration file for sphinx
+# For the full list of built-in configuration values, see the documentation:
+# https://www.sphinx-doc.org/en/master/usage/configuration.html
 
-# INSTRUCTIONS
+
+# TEMPLATE INSTRUCTIONS
 # ***********************************************************************
-# To adjust this to your project, you may want to:
 # 1) look for '[CHANGE THIS]' for mandatory modifications
 # 2) look for '[CHECK THIS]' for possible modifications
 # 3) look for '[EXAMPLE]' for simple examples (comment or uncomment it if needed)
-# 3) look for '[ADD MORE IF NEDDED]' for possible extra features
+# 4) look for '[ADD MORE IF NEDDED]' for possible extra features
+# 5) placeholders are designated by curly braces: {replace-this}
 
-# For the full list of built-in 
-# configuration values, see the documentation:  
-# https://www.sphinx-doc.org/en/master/usage/configuration.html  
 
 
 # REPO LAYOUT
