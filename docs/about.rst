@@ -3,11 +3,7 @@ About
 
 .. develop some explanation notes [CHANGE THIS]:
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Nulla mollis tincidunt erat eget iaculis.
-Mauris gravida ex quam, in porttitor lacus lobortis vitae.
-In a lacinia nisl. Pellentesque habitant morbi tristique senectus
-et netus et malesuada fames ac turpis egestas. Morbi et tempor sem.
+Provide a brief overview of the project, describing its purpose, scope, and main features. This section should give readers a clear understanding of what the project does and why it exists.
 
 .. _origins:
 
@@ -16,11 +12,7 @@ Origins
 
 .. develop some history notes [CHANGE THIS]:
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Nulla mollis tincidunt erat eget iaculis.
-Mauris gravida ex quam, in porttitor lacus lobortis vitae.
-In a lacinia nisl. Pellentesque habitant morbi tristique senectus
-et netus et malesuada fames ac turpis egestas. Morbi et tempor sem.
+Describe the background and history of the project, including why it was created, any inspiration or context, and important milestones in its development. This helps readers understand the rationale behind the project.
 
 .. _applications:
 
@@ -29,11 +21,7 @@ Applications
 
 .. develop some application notes [CHANGE THIS]:
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Nulla mollis tincidunt erat eget iaculis.
-Mauris gravida ex quam, in porttitor lacus lobortis vitae.
-In a lacinia nisl. Pellentesque habitant morbi tristique senectus
-et netus et malesuada fames ac turpis egestas. Morbi et tempor sem.
+Explain the typical use cases and scenarios where the project can be applied. Include examples of problems it solves or workflows it enhances, giving readers a sense of its practical value.
 
 .. _resources:
 
@@ -42,8 +30,4 @@ Resources
 
 .. develop some resources notes [CHANGE THIS]:
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Nulla mollis tincidunt erat eget iaculis.
-Mauris gravida ex quam, in porttitor lacus lobortis vitae.
-In a lacinia nisl. Pellentesque habitant morbi tristique senectus
-et netus et malesuada fames ac turpis egestas. Morbi et tempor sem.
+List additional materials, references, or external links that can help readers learn more about the project. This may include example notebooks, tutorials, API documentation, or related projects.
