@@ -32,7 +32,7 @@ jobs:
       - name: Build HTML
         # V [CHECK THIS] this command may change depending on the package manager
         run: |
-          sphinx-build -b html docs/source docs/_build/html
+          sphinx-build -b html docs docs/_build/html
 
       # Step 5: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
