@@ -1,5 +1,6 @@
 ![](https://img.shields.io/badge/status-development-red.svg)
 ![Top Language](https://img.shields.io/github/languages/top/iporepos/copyme)
+[![Docs](https://github.com/iporepos/copyme/actions/workflows/docs.yml/badge.svg)](https://github.com/iporepos/copyme/actions/workflows/docs.yml)
 
 <a logo>
 <img src="https://raw.githubusercontent.com/iporepos/copyme/master/docs/figs/logo.png" height="130" width="130">
