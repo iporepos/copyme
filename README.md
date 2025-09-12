@@ -23,11 +23,11 @@ A simple template for python development. Use this repository as a template for 
 
 When copying files from this repo, remember that they are _templates_. So:
 
-1) look for '[CHANGE THIS]' for mandatory modifications;
-2) look for '[CHECK THIS]' for possible modifications;
-3) look for '[EXAMPLE]' for simple examples (comment or uncomment it if needed);
-4) look for '[ADD MORE IF NEDDED]' for possible extra features;
-5) placeholders are designated by curly braces: '{replace-this}'.
+1) look for `[CHANGE THIS]` for mandatory modifications;
+2) look for `[CHECK THIS]` for possible modifications;
+3) look for `[EXAMPLE]` for simple examples (comment or uncomment it if needed);
+4) look for `[ADD MORE IF NEDDED]` for possible extra features;
+5) placeholders are designated by curly braces: `{replace-this}`.
 
 
 ---
@@ -91,13 +91,14 @@ copyme/
 ├── pyproject.toml                # [CHECK THIS] configuration of python project
 ├── MANIFEST.in                   # [CHECK THIS] configuration of source distribution
 │
-├── .venv/                        # [ignored by git] virtual environment (recommended for development)
+├── .venv/                        # [ignored] virtual environment (recommended for development)
 │
 ├── .github/                      # github folder
 │    └── workflows/               # folder for continuous integration services
 │         └── docs.yml            # [CHECK THIS] configuration file for documentation build and deploy
 │
 ├── src/                          # source code folder
+│    ├── copyme.egg-info          # [ignored] [generated] files for local development
 │    └── copyme/                  # [CHANGE THIS] source code root
 │         ├── __init__.py         # template init file
 │         ├── module.py           # template module
@@ -106,7 +107,7 @@ copyme/
 │         │    ├── __init__.py
 │         │    └── submodule.py
 │         └── data/               # run-time data
-│              └── src_data.csv   # dummy data file
+│              └── src_data.txt   # dummy data file
 │
 ├── tests/                        # testing code folder
 │    ├── conftest.py              # [CHECK THIS] configuration file of tests
@@ -119,8 +120,8 @@ copyme/
 │    ├── data/                    # test-only data
 │    │     ├── test_data.csv
 │    │     ├── datasets.csv       # table of remote datasets
-│    │     └── dataset1/          # [ignored by git] subfolders in data
-│    └── outputs/                 # [ignored by git] tests outputs
+│    │     └── dataset1/          # [ignored] subfolders in data
+│    └── outputs/                 # [ignored] tests outputs
 │
 ├── docs/                         # documentation folder
 │    ├── about.rst                # info about the repo
@@ -129,19 +130,18 @@ copyme/
 │    ├── dummy.md                 # markdown docs also works
 │    ├── index.rst                # home page for documentation
 │    ├── usage.rst                # instructions for using this repo
-│    ├── make.bat                 # (optional) sphinx auxiliar file 
-│    ├── Makefile                 # (optional) sphinx auxiliar file 
+│    ├── make.bat                 # (optional) [generated] sphinx auxiliar file 
+│    ├── Makefile                 # (optional) [generated] sphinx auxiliar file 
 │    ├── figs/                    # figs-only files
 │    │    ├── logo.png
 │    │    ├── logo.svg
 │    │    └── fig1.png               
 │    ├── data/                    # docs-only data
-│    │    ├── refs.bib
-│    │    └── docs.csv
-│    ├── generated/               # sphinx created files 
-│    ├── _templates/              # [ignored] sphinx created stuff
-│    ├── _static/                 # [ignored] sphinx created stuff
-│    └── _build/                  # [ignored] sphinx build
+│    │    └── docs.txt            # dummy data file
+│    ├── generated/               # [generated] sphinx created files 
+│    ├── _templates/              # [ignored] [generated] sphinx created stuff
+│    ├── _static/                 # [ignored] [generated] sphinx created stuff
+│    └── _build/                  # [ignored] [generated] sphinx build
 │
 └── examples/                     # (optional) learning resources 
      ├── examples_01.ipynb    
