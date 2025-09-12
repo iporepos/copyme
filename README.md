@@ -35,31 +35,41 @@ When copying files from this repo, remember that they are templates. So:
 
 This repository relies on several **configuration files** that are essential for the proper functioning of the template. Each file has a specific role, and some of them work together, so they should be edited thoughtfully. Below is an overview of the main configuration files and what you should know about them.
 
-> ![Note] 
-> All files are commented with recommended actions and extra steps.
+> ![IMPORTANT]
+> All config files are commented with recommended actions and extra steps.
 
-## `pyproject.toml`
+## Project configuration 
+
+> file `pyproject.toml`
 
 This is the most important configuration file in the repository. It manages the project’s dependencies, build system, and other settings. Make sure to update this file if you add new dependencies or change the project structure. Proper configuration here is crucial for both development and continuous integration.
 
-## `.gitignore`
+## Ignore files by Git
+
+> file `.gitignore`
 
 This file defines which files and folders should be ignored by Git. It is important because it prevents unnecessary or heavy files from being included in commits, keeping the repository clean. You can add patterns here for auxiliary files, large datasets, or temporary outputs that should not be tracked.
 
-## `docs/conf.py`
+## Testing configuration 
 
-This file contains the configuration for Sphinx, the documentation builder used in this project. It sets the theme, handles unused modules, and ensures that the documentation builds correctly. Any changes to the project’s structure or modules may require updates to this file to avoid broken documentation builds.
+> file `tests/conftest.py`
 
-## `.github/workflows/docs.yml`
+This module contains configurations for the `tests` suite. You are free to modify functions, classes, etc, to fit your development needs. It already includes some pre-defined tests that serve as examples or starting points.
 
-This GitHub Actions workflow automates the build of the documentation online. It relies on the other configuration files, particularly `pyproject.toml` and `docs/conf.py`. If you modify dependencies or the documentation setup, make sure the workflow still runs correctly. 
+## Sphinx configuration
 
-> ![Note] 
+> file `./docs/conf.py`
+
+This file contains the configuration for [Sphinx](https://www.sphinx-doc.org/en/master/index.html), the documentation builder used in this project. It sets the theme, handles unused modules, and ensures that the documentation builds correctly. Any changes to the project’s structure or modules may require updates to this file to avoid broken documentation builds.
+
+## Docs website configuration 
+
+> file `.github/workflows/docs.yml`
+
+This GitHub Actions workflow automates the build of the documentation website online. It relies on the other configuration files, particularly `pyproject.toml` and `docs/conf.py`. If you modify dependencies or the documentation setup, make sure the workflow still runs correctly. 
+
+> ![IMPORTANT] 
 > Some extra steps are required for building the docs online.
-
-## `tests/conftest.py`
-
-This module contains configurations for the test suite. You are free to modify functions, classes, etc, to fit your development needs. It already includes some pre-defined tests that serve as examples or starting points.
 
 
 ---
@@ -68,6 +78,8 @@ This module contains configurations for the test suite. You are free to modify f
 
 A standard python repo may use the following layout. 
 This layout is known as `src` layout, since it stores the source code under a `src/{repo}` folder.
+
+> See more on [flat vs src layout](https://packaging.python.org/en/latest/discussions/src-layout-vs-flat-layout/) 
 
 ```txt
 copyme/
