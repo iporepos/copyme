@@ -48,7 +48,7 @@ name = "copyme"          # <-- [CHANGE THIS] set with your project name
 # Version number
 version = "0.0.1"        # <-- [CHANGE THIS] Set version
 # Short description
-description = "Hello!"   # <-- [CHANGE THIS]
+description = "A simple template for python development."   # <-- [CHANGE THIS]
 # Keywords (optional) for search on PyPI
 keywords = [
   "python", 
@@ -104,10 +104,11 @@ requires-python = ">=3.10"  # <-- [CHECK THIS] Python 3.10 or higher
 # Installed automatically when someone installs your package
 
 dependencies = [
-    "numpy",  # [EXAMPLE] numerical computations
-    "pandas", # [EXAMPLE] data manipulation
+    "requests",  # [EXAMPLE] [RECOMMENDED] network operations
+    "numpy",     # [EXAMPLE] [RECOMMENDED] numerical computations
+    "pandas",    # [EXAMPLE] [RECOMMENDED] data manipulation
     # [EXAMPLE] custom dependency directly from GitHub:
-    # "my-package @ git+https://github.com/username/my-package.git@main"  
+    # "my-package @ git+https://github.com/username/my-package.git@main",
     # ... [ADD MORE IF NEDDED]
 ]
 
@@ -138,9 +139,10 @@ dev = [
 docs = [
     "sphinx",                       # [EXAMPLE] Documentation generator
     "sphinx-autodoc-typehints",     # [EXAMPLE] Include Python type hints in docs
-    "sphinx-rtd-theme",             # [EXAMPLE] A nice Sphinx theme
-    "pydata-sphinx-theme",          # [EXAMPLE] A nice Sphinx theme
-    "sphinx_copybutton",            # [EXAMPLE] A nice Sphinx feature for code blocks
+    "sphinx-rtd-theme",             # [EXAMPLE] Sphinx theme
+    "pydata-sphinx-theme",          # [EXAMPLE] Sphinx theme
+    "sphinx_copybutton",            # [EXAMPLE] Sphinx feature for code blocks
+    "myst-parser",                  # [EXAMPLE] Sphinx feature for markdown files
     # ... [ADD MORE IF NEDDED]
 ]
 # Notes

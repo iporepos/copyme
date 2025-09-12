@@ -46,10 +46,10 @@ sys.path.insert(0, os.path.abspath("../src")) # <-- [CHECK THIS] src layout
 # ***********************************************************************
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information  
 
-project = '{name}' # todo fill  
-copyright = '{year}, {author}'  # todo fill  
-author = '{author}'  # todo fill  
-release = '{version}'  # todo fill  
+project = 'copyme'                   # <-- [CHANGE HERE]
+copyright = '2025, Iporã Possantti'  # <-- [CHANGE HERE]
+author = 'Iporã Possantti'           # <-- [CHANGE HERE]
+release = '0.0.1'                    # <-- [CHANGE HERE]
 
 
 
@@ -68,9 +68,16 @@ extensions = [
     "sphinx.ext.intersphinx",  
     # extra extensions  
     # -- nice copy button for codeblocks 
-    'sphinx_copybutton' # todo `python -m pip install sphinx-copybutton`  
+    "sphinx_copybutton", # install by `python -m pip install sphinx-copybutton`
+    # -- converter for markdown files in docs
+    "myst_parser", # install by `python -m pip install myst-parser`
 ]  
-  
+
+source_suffix = {
+    ".rst": "restructuredtext",
+    ".md": "markdown",
+}
+
 # Ignore external dependencies  
 autodoc_mock_imports = [  
     'numpy',  
@@ -131,5 +138,5 @@ External (requires installation):
 >> html_theme = "pydata_sphinx_theme" 
   
 """  
-html_theme = "alabaster"  
+html_theme = "pydata_sphinx_theme"  # <-- [CHECK THIS] it might be not installed. use built-in 'classic' in case
 html_static_path = ['_static']

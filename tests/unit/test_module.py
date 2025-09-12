@@ -21,164 +21,146 @@ Examples
 todo docstring  
 {Examples in rST} 
 
-Print a message
+From the terminal, run:
 
-.. code-block:: python
+.. code-block:: bash
 
-    # print message
-    print("Hello world!")
-    # [Output] >> 'Hello world!'
+    python ./tests/unit/test_module.py
 
 
-"""  
-  
+"""
+
 # ***********************************************************************  
 # IMPORTS  
 # ***********************************************************************  
 # import modules from other libs  
-  
+
 # Native imports  
 # =======================================================================  
-# import {module}  
+# import {module}
+import unittest
 # ... {develop}
-  
+
 # External imports  
 # =======================================================================  
 # import {module}  
 # ... {develop}
-  
+
 # Project-level imports  
 # =======================================================================  
-# import {module}  
+from copyme.module import add, multiply
+from tests import conftest
+from tests.conftest import testprint
 # ... {develop}
-  
-  
+
+
 # ***********************************************************************  
 # CONSTANTS  
 # ***********************************************************************  
 # define constants in uppercase  
-    
+
 # CONSTANTS -- Project-level  
 # =======================================================================  
 # ... {develop}  
-  
-# Subsubsection example  
-# -----------------------------------------------------------------------  
-HELLO = "Hello World!"  # example  
-# ... {develop}
-  
-# CONSTANTS -- Module-level  
+
+# CONSTANTS -- Module-level
 # =======================================================================  
 # ... {develop}   
-  
-  
-  
+
+
 # ***********************************************************************  
 # FUNCTIONS  
 # ***********************************************************************  
-  
+
 # FUNCTIONS -- Project-level  
 # =======================================================================  
-  
-# Demo example  
-# -----------------------------------------------------------------------  
-def myfunc(parameter1):  
-    # todo docstring  
-    print(parameter1)  
-    return None  
-
-def add(num1, num2):
-    """
-    Add two numbers
-
-    :param num1: number 1
-    :type num1: int or float
-    :param num2: number 2
-    :type num2: int or float
-    :return: sum of numbers
-    :rtype: int or float
-    """
-    return num1 + num2
-
-def multiply(num1, num2):
-    """
-    Multiply two numbers
-
-    :param num1: number 1
-    :type num1: int or float
-    :param num2: number 2
-    :type num2: int or float
-    :return: product of numbers
-    :rtype: int or float
-    """
-    return num1 * num2
-
 # ... {develop}
-  
+
 # FUNCTIONS -- Module-level  
 # =======================================================================  
 # ... {develop}  
-  
-  
+
 
 # ***********************************************************************  
 # CLASSES  
 # ***********************************************************************  
-  
+
 # CLASSES -- Project-level  
 # =======================================================================  
-  
+
 # Demo example  
 # -----------------------------------------------------------------------  
-class MyClass:
-    # todo docstring
+class TestMyModule(unittest.TestCase):
 
-    def __init__(self):
-        # todo docstring
-        print("start class")
-        self.value = 10
-
-    # Internal methods
+    # Setup methods
     # -------------------------------------------------------------------
-    def _reset_value(self):
-        # todo docstring
-        self.value = 10
+
+    @classmethod
+    def setUpClass(cls):
+        """
+        Runs once before all tests in this class.
+        """
+        # ... {develop}
         return None
 
-    # Public methods
-    # -------------------------------------------------------------------
-    def print_value(self):
-        # todo docstring
-        print(self.value)
+    def setUp(self):
+        """
+        Runs before each test method.
+        """
+        # ... {develop}
         return None
 
-    # Static methods
+    # Testing methods
     # -------------------------------------------------------------------
-    @staticmethod
-    def print_message(s="Hello world!"):
-        # todo docstring
-        print(s)
+
+    def test_add(self):
+        """
+        Test the add function
+        """
+        #testprint("add function")
+        self.assertEqual(add(2, 3), 5)
+        self.assertEqual(add(-1, 1), 0)
+
+    def test_multiply(self):
+        """
+        Test the multiply function
+        """
+        # testprint("multiply function")
+        self.assertEqual(multiply(2, 3), 6)
+        self.assertEqual(multiply(0, 10), 0)
+
+    # Tear down methods
+    # -------------------------------------------------------------------
+    def tearDown(self):
+        """
+        Runs after each test method.
+        """
+        # ... {develop}
+        return None
+
+    @classmethod
+    def tearDownClass(cls):
+        """
+        Runs once after all tests in this class.
+        """
+        # ... {develop}
         return None
 
 # ... {develop}
-  
+
 # CLASSES -- Module-level  
 # =======================================================================  
 # ... {develop}  
 
-  
 
 # ***********************************************************************  
 # SCRIPT  
 # ***********************************************************************  
 # standalone behaviour as a script  
-if __name__ == "__main__":  
-  
-    # Script section  
-    # ===================================================================       
-    print("Hello world!")  
-    # ... {develop}
+if __name__ == "__main__":
 
-    # Script subsection  
-    # -------------------------------------------------------------------
+    # Call all tests in the module
+    # ===================================================================       
+    unittest.main()
+
     # ... {develop}

@@ -61,9 +61,9 @@ copyme/
 │    │    ├── refs.bib
 │    │    └── docs.csv
 │    ├── generated/               # sphinx created files 
-│    ├── _templates/              # sphinx created stuff
-│    ├── _static/                 # sphinx created stuff
-│    └── _build/                  # [ignored from VCS] sphinx build
+│    ├── _templates/              # [ignored] sphinx created stuff
+│    ├── _static/                 # [ignored] sphinx created stuff
+│    └── _build/                  # [ignored] sphinx build
 │
 └── examples/                     # (optional) learning resources 
      ├── examples_01.ipynb    
