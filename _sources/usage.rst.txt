@@ -3,16 +3,15 @@ Usage
 
 .. _quickview:
 
-Quick Overview
+Overview
 ********************************************
 
 .. develop some entry notes [CHANGE THIS]:
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Nulla mollis tincidunt erat eget iaculis.
-Mauris gravida ex quam, in porttitor lacus lobortis vitae.
-In a lacinia nisl. Pellentesque habitant morbi tristique senectus
-et netus et malesuada fames ac turpis egestas. Morbi et tempor sem.
+For new users, the installation instructions allow quick setup and testing of basic functionality.
+For those interested in contributing, development instructions cover cloning, virtual environment setup, installation in development mode, testing, and documentation practices.
+Additional resources, including example Jupyter notebooks and live interactive versions, are available to explore features and usage patterns in detail.
+Following the recommended test-driven and documentation-oriented development practices helps maintain quality and consistency across contributions.
 
 .. _installation:
 
@@ -43,11 +42,10 @@ Guides
 
 .. develop guiding instructions [CHANGE THIS]:
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Nulla mollis tincidunt erat eget iaculis.
-Mauris gravida ex quam, in porttitor lacus lobortis vitae.
-In a lacinia nisl. Pellentesque habitant morbi tristique senectus
-et netus et malesuada fames ac turpis egestas. Morbi et tempor sem.
+For those seeking practical guidance on using the tools available in the repo, relevant resources are provided.
+Example Jupyter notebooks are available in the repository’s examples folder, along with live, interactive versions on platforms such as Google Colab. These resources illustrate the project’s features, demonstrate typical usage patterns, and allow experimentation with the functionality directly.
+
+.. develop guiding resources here [CHANGE THIS]:
 
 
 .. _development:
@@ -57,11 +55,10 @@ Development
 
 .. develop development instructions [CHANGE THIS]:
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Nulla mollis tincidunt erat eget iaculis.
-Mauris gravida ex quam, in porttitor lacus lobortis vitae.
-In a lacinia nisl. Pellentesque habitant morbi tristique senectus
-et netus et malesuada fames ac turpis egestas. Morbi et tempor sem.
+This section provides guidance for those who wish to contribute to the project.
+It includes instructions for setting up the development environment, cloning the repository, installing the project in development mode, running tests, and building the documentation.
+Contributors are encouraged to follow test-driven development and documentation-oriented practices to ensure that new features and changes adhere to project standards, maintain quality, and keep the documentation up to date.
+
 
 Cloning
 ============================================
@@ -123,7 +120,7 @@ Documentation
 
 .. develop documentation instructions [CHANGE THIS]:
 
-Documentation-driven development is recommended.
+Documentation-oriented development is recommended.
 Every feature must be documented with standard
 Sphinx (rST) format.
 
