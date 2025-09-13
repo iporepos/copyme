@@ -55,9 +55,10 @@ jobs:
       # -----------------------------------------------------------------
       - name: Install dependencies
         # V [CHECK THIS] use the appropriate package manager
+        # V [CHECK THIS] include extra testing dependencies if needed
         run: |
           python -m pip install --upgrade pip 
-          pip install .[dev]
+          pip install .
 
       # Step 4: Run unit tests
       # -----------------------------------------------------------------
