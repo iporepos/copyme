@@ -30,6 +30,7 @@ Print a message
 
 
 """
+
 # ***********************************************************************
 # IMPORTS
 # ***********************************************************************
@@ -40,6 +41,7 @@ Print a message
 # =======================================================================
 import os
 from pathlib import Path
+
 # ... {develop}
 
 # External imports
@@ -48,6 +50,7 @@ import requests
 import zipfile
 import numpy as np
 import pandas as pd
+
 # ... {develop}
 
 # Project-level imports
@@ -110,21 +113,25 @@ RUN_BENCHMARKS_XXL = os.getenv("RUN_BENCHMARKS_XXL", "0") == "1"
 # Project-level
 # =======================================================================
 
+
 def testmsg(s):
     # todo docstring
     s2 = f"{REPO_NAME} -- tests >>> {s}".lower()
     return s2
+
 
 def testprint(s):
     s2 = testmsg(s)
     print(s2, flush=True)
     return s2
 
+
 def make_output():
     # todo docstring
     testprint("making output dir")
     os.mkdirs(OUTPUT_DIR, exist_ok=True)
     return None
+
 
 def make_data(size=100):
     # todo docstring
@@ -133,18 +140,13 @@ def make_data(size=100):
         v = np.random.randint(low=10, high=100, size=size)
         v2 = np.random.randint(low=10, high=100, size=size)
         v3 = v2 / v
-        df = pd.DataFrame(
-            {
-                "v1": v,
-                "v2": v2,
-                "v3": v3
-            }
-        )
+        df = pd.DataFrame({"v1": v, "v2": v2, "v3": v3})
         df.to_csv(DATA_FILE, sep=";", index=False)
         testprint("data created")
     else:
         testprint("data already available")
     return None
+
 
 def load_data():
     # todo docstring
@@ -152,10 +154,12 @@ def load_data():
     df = pd.read_csv(DATA_FILE, sep=";")
     return df
 
+
 # ... {develop}
 
 # Module-level
 # =======================================================================
+
 
 def retrieve_dataset(name):
     # todo docstring
@@ -180,7 +184,7 @@ def install_dataset(name):
     # todo docstring
     dataset_dir = DATA_DIR / name
     os.makedirs(dataset_dir, exist_ok=True)
-    dataset_url = DATASETS_DF.loc[DATASETS_DF['name'] == name, 'url'].values[0]
+    dataset_url = DATASETS_DF.loc[DATASETS_DF["name"] == name, "url"].values[0]
     zip_path = os.path.join(dataset_dir, f"{name}.zip")
 
     testprint(f"donwloading dataset: {name} ...")
@@ -201,9 +205,10 @@ def download_file(url, dst):
             f.write(chunk)
     return None
 
+
 def extract_zip(file_path, extract_to):
     # todo docstring
-    with zipfile.ZipFile(file_path, 'r') as zip_ref:
+    with zipfile.ZipFile(file_path, "r") as zip_ref:
         zip_ref.extractall(extract_to)
 
 
@@ -220,11 +225,14 @@ def extract_zip(file_path, extract_to):
 # Module-level
 # =======================================================================
 
+
 class DatasetDownloadError(Exception):
     """
     Custom exception for dataset download issues.
     """
+
     pass
+
 
 # ... {develop}
 
@@ -238,14 +246,13 @@ if __name__ == "__main__":
     # Script section
     # ===================================================================
     testprint("conftest.py")
-    
+
     # Make data
     # -------------------------------------------------------------------
     make_data(size=50)
-  
+
     # ... {develop}
 
-  
     # Script subsection
     # -------------------------------------------------------------------
     # ... {develop}

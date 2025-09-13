@@ -1,25 +1,25 @@
-"""  
-{Short module description (1-3 sentences)}  
-todo docstring  
-  
-Features  
---------  
-todo docstring  
-  
- - {feature 1} 
- - {feature 2} 
- - {feature 3} 
- - {etc} 
- 
-Overview  
---------  
-todo docstring  
-{Overview description}  
-  
-Examples  
---------  
-todo docstring  
-{Examples in rST} 
+"""
+{Short module description (1-3 sentences)}
+todo docstring
+
+Features
+--------
+todo docstring
+
+ - {feature 1}
+ - {feature 2}
+ - {feature 3}
+ - {etc}
+
+Overview
+--------
+todo docstring
+{Overview description}
+
+Examples
+--------
+todo docstring
+{Examples in rST}
 
 Print a message
 
@@ -32,62 +32,64 @@ Print a message
 
 """
 
-# ***********************************************************************  
-# IMPORTS  
-# ***********************************************************************  
-# import modules from other libs  
+# ***********************************************************************
+# IMPORTS
+# ***********************************************************************
+# import modules from other libs
 
-# Native imports  
-# =======================================================================  
+# Native imports
+# =======================================================================
 import unittest
 from time import sleep
 
 # ... {develop}
 
-# External imports  
-# =======================================================================  
+# External imports
+# =======================================================================
 import numpy as np
 import pandas as pd
 
 # ... {develop}
 
-# Project-level imports  
-# =======================================================================  
+# Project-level imports
+# =======================================================================
 from tests import conftest
 from tests.conftest import RUN_BENCHMARKS, RUN_BENCHMARKS_XXL, testprint
+
 # ... {develop}
 
 
-# ***********************************************************************  
-# CONSTANTS  
-# ***********************************************************************  
-# define constants in uppercase  
+# ***********************************************************************
+# CONSTANTS
+# ***********************************************************************
+# define constants in uppercase
 
-# CONSTANTS -- Project-level  
-# =======================================================================  
-# ... {develop}  
+# CONSTANTS -- Project-level
+# =======================================================================
+# ... {develop}
 
-# Subsubsection example  
-# -----------------------------------------------------------------------  
-HELLO = "Hello World!"  # example  
+# Subsubsection example
+# -----------------------------------------------------------------------
+HELLO = "Hello World!"  # example
 # ... {develop}
 
 
-# CONSTANTS -- Module-level  
-# =======================================================================  
-# ... {develop}   
-
-
-# ***********************************************************************  
-# FUNCTIONS  
-# ***********************************************************************  
-
-# FUNCTIONS -- Project-level  
-# =======================================================================  
+# CONSTANTS -- Module-level
+# =======================================================================
 # ... {develop}
 
-# FUNCTIONS -- Module-level  
-# =======================================================================  
+
+# ***********************************************************************
+# FUNCTIONS
+# ***********************************************************************
+
+# FUNCTIONS -- Project-level
+# =======================================================================
+# ... {develop}
+
+
+# FUNCTIONS -- Module-level
+# =======================================================================
 def emulate_simulation(data_path, output_path):
     # todo docstring
     data_file_path = f"{data_path}/numbers.csv"
@@ -99,27 +101,25 @@ def emulate_simulation(data_path, output_path):
         sim_v[i] = df["v3"].values[i] * sim_r[i]
         sleep(0.0002)
         print(f"step >> {i}")
-    df_o = pd.DataFrame(
-        {
-            "v3": df["v3"].values,
-            "sim": sim_v
-        }
-    )
+    df_o = pd.DataFrame({"v3": df["v3"].values, "sim": sim_v})
     df_o.to_csv(output_path / "simulation.csv", sep=";", index=False)
     return 0
+
+
 # ... {develop}
 
 
-# ***********************************************************************  
-# CLASSES  
-# ***********************************************************************  
+# ***********************************************************************
+# CLASSES
+# ***********************************************************************
 
-# CLASSES -- Project-level  
-# =======================================================================  
-# ... {develop}
-
-# CLASSES -- Module-level  
+# CLASSES -- Project-level
 # =======================================================================
+# ... {develop}
+
+# CLASSES -- Module-level
+# =======================================================================
+
 
 @unittest.skipUnless(RUN_BENCHMARKS, reason="skipping benchmarks")
 class BenchmarkTemplateTests(unittest.TestCase):
@@ -135,7 +135,6 @@ class BenchmarkTemplateTests(unittest.TestCase):
         tpl = conftest.retrieve_dataset(name="numbers")
         cls.data_path = tpl[0]
         cls.output_path = tpl[1]
-
 
     def setUp(self):
         """
@@ -155,8 +154,7 @@ class BenchmarkTemplateTests(unittest.TestCase):
         """
         try:
             results = emulate_simulation(
-                data_path=self.data_path,
-                output_path=self.output_path
+                data_path=self.data_path, output_path=self.output_path
             )
         except Exception as e:
             self.fail(f"simulation crashed with error: {e}")
@@ -166,12 +164,10 @@ class BenchmarkTemplateTests(unittest.TestCase):
         Measure execution time or performance.
         """
         import time
+
         start = time.time()
         # run
-        emulate_simulation(
-            data_path=self.data_path,
-            output_path=self.output_path
-        )
+        emulate_simulation(data_path=self.data_path, output_path=self.output_path)
 
         elapsed = time.time() - start
 
@@ -187,8 +183,7 @@ class BenchmarkTemplateTests(unittest.TestCase):
         """
         # Run simulation
         results = emulate_simulation(
-            data_path=self.data_path,
-            output_path=self.output_path
+            data_path=self.data_path, output_path=self.output_path
         )
 
         # Example assertions: basic validation of output
@@ -212,22 +207,24 @@ class BenchmarkTemplateTests(unittest.TestCase):
         # ... {develop}
         return None
 
+
 # ... {develop}
 
 
-# ***********************************************************************  
-# SCRIPT  
-# ***********************************************************************  
-# standalone behaviour as a script  
+# ***********************************************************************
+# SCRIPT
+# ***********************************************************************
+# standalone behaviour as a script
 if __name__ == "__main__":
     from tests.conftest import RUN_BENCHMARKS
+
     RUN_BENCHMARKS = True
 
     # Script section
-    # ===================================================================       
+    # ===================================================================
     unittest.main()
     # ... {develop}
 
-    # Script subsection  
+    # Script subsection
     # -------------------------------------------------------------------
     # ... {develop}

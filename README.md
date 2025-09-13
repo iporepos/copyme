@@ -1,7 +1,10 @@
 ![Top Language](https://img.shields.io/github/languages/top/iporepos/copyme)
 ![Status](https://img.shields.io/badge/status-development-yellow.svg)
-[![Documentation](https://img.shields.io/badge/docs-online-brightgreen)](https://iporepos.github.io/copyme/)
+[![Code Style](https://img.shields.io/badge/style-black-000000.svg)](https://github.com/psf/black)
+[![Documentation](https://img.shields.io/badge/docs-online-green)](https://iporepos.github.io/copyme/)
+[![Style Status](https://github.com/iporepos/copyme/actions/workflows/style.yml/badge.svg)](https://github.com/iporepos/copyme/actions/workflows/style.yml)
 [![Docs Status](https://github.com/iporepos/copyme/actions/workflows/docs.yml/badge.svg)](https://github.com/iporepos/copyme/actions/workflows/docs.yml)
+[![Tests Status](https://github.com/iporepos/copyme/actions/workflows/tests.yml/badge.svg)](https://github.com/iporepos/copyme/actions/workflows/tests.yml)
 
 
 <a logo>
@@ -51,26 +54,41 @@ This is the most important configuration file in the repository. It manages the 
 
 This file defines which files and folders should be ignored by Git. It is important because it prevents unnecessary or heavy files from being included in commits, keeping the repository clean. You can add patterns here for auxiliary files, large datasets, or temporary outputs that should not be tracked.
 
+
+## Style CI configuration
+
+`.github/workflows/style.yml`
+
+This file contains Continous Integration (CI) setups used for code style checks. Code style follows [Black](https://black.readthedocs.io/en/stable/) formatter. This GitHub Actions workflow automates check up of code style. It relies on `pyproject.toml` dev dependencies.
+
+
+## Docs configuration
+
+`./docs/conf.py`
+
+This file contains the configuration for [Sphinx](https://www.sphinx-doc.org/en/master/index.html), the documentation builder used in this project. It sets the theme, handles unused modules, and ensures that the documentation builds correctly. Any changes to the project’s structure or modules may require updates to this file to avoid broken documentation builds.
+
+## Docs CI configuration 
+
+`.github/workflows/docs.yml`
+
+This file contains Continous Integration (CI) setups used for documentation building. This GitHub Actions workflow automates the build of the documentation website online. It relies on the other configuration files, particularly `pyproject.toml` and `docs/conf.py`. If you modify dependencies or the documentation setup, make sure the workflow still runs correctly. 
+
+> [!WARNING] 
+> Some extra steps are required for building the docs online. See the file for instructions.
+
+
 ## Testing configuration 
 
 `./tests/conftest.py`
 
 This module contains configurations for the `tests` suite. You are free to modify functions, classes, etc, to fit your development needs. It already includes some pre-defined tests that serve as examples or starting points.
 
-## Sphinx configuration
+## Testing CI configuration 
 
-`./docs/conf.py`
+`.github/workflows/tests.yml`
 
-This file contains the configuration for [Sphinx](https://www.sphinx-doc.org/en/master/index.html), the documentation builder used in this project. It sets the theme, handles unused modules, and ensures that the documentation builds correctly. Any changes to the project’s structure or modules may require updates to this file to avoid broken documentation builds.
-
-## Docs website configuration 
-
-`.github/workflows/docs.yml`
-
-This GitHub Actions workflow automates the build of the documentation website online. It relies on the other configuration files, particularly `pyproject.toml` and `docs/conf.py`. If you modify dependencies or the documentation setup, make sure the workflow still runs correctly. 
-
-> [!WARNING] 
-> Some extra steps are required for building the docs online. See the file for instructions.
+This file contains Continous Integration (CI) setups used for unit tests. 
 
 
 ---
@@ -95,7 +113,9 @@ copyme/
 │
 ├── .github/                      # github folder
 │    └── workflows/               # folder for continuous integration services
-│         └── docs.yml            # [CHECK THIS] configuration file for documentation build and deploy
+│         ├── style.py            # [CHECK THIS] configuration file for style check workflow
+│         ├── style.py            # [CHECK THIS] configuration file for style check workflow
+│         └── docs.yml            # [CHECK THIS] configuration file for docs build workflow
 │
 ├── src/                          # source code folder
 │    ├── copyme.egg-info          # [ignored] [generated] files for local development

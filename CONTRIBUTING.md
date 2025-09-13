@@ -1,0 +1,178 @@
+# Development
+
+This section provides guidance for those who wish to contribute to the project.
+It includes instructions for setting up the development environment, cloning the repository, installing the project in development mode, running tests, and building the documentation.
+
+ To ensure that new features and changes adhere to project standards, maintain quality, and keep the documentation up to date, contributors are required to follow:
+
+* Style-consistent formatting;
+* Documentation-oriented practices;
+* Test-driven development;
+
+
+## Cloning
+
+Use your IDE for authenticate in GitHub and clone the repo branch of interest
+in your local system.
+
+```{note}
+Of course, Git must be set as the version control system
+```
+
+Alternatively, clone via terminal:
+
+```bash
+# [CHECK THIS] adapt this for branches or other repos
+git clone https://github.com/iporepos/copyme.git
+``` 
+
+## Installing
+
+For developing, it's recommended to set up a python
+**Virtual Environment** (`venv`) locally for developing the repo.
+This is best for avoiding falling into a [dependency hell](https://en.wikipedia.org/wiki/Dependency_hell) with your
+other projects.
+
+```{important}
+Of course, you need Python installed in your system
+```
+
+Move to the repo root folder:
+
+
+```bash
+# [CHANGE THIS] set your own actual local path 
+cd ./path/to/{thislib}
+```
+
+Create a python `venv`:
+
+```bash
+python -m venv .venv
+```
+
+Activate the `venv` session.
+
+On Unix (Linux/Mac):
+
+```bash
+source .venv/bin/activate
+```
+Activate the `venv` on Windows:
+
+```bash
+. .venv\Scripts\Activate.ps1
+```
+Now, under the `venv` session, install all
+dependencies in editable mode `-e` (including `dev` and `docs` dependencies with `.[dev, docs]`):
+
+```bash
+python -m pip install -e .[dev,docs]
+```
+This will install all dependecies needed both for
+developing and documentation.
+
+---
+
+## Style
+
+In this project, we enforce using [Black](https://black.readthedocs.io) to ensure a consistent code style. 
+
+Since`black` is listed in dev dependencies, you may run manually before push:
+
+```bash
+black .
+```
+> from the repo root, under the venv session
+
+```{warning}
+Unformatted contributions are not going to pass because GitHub checks for style 
+consistency.
+```
+
+### Automating Black
+
+There are tools for automating `black`.
+
+---
+
+## Documentation
+
+Documentation-oriented development is recommended. Every feature must be documented with standard Sphinx (rST) format.
+
+### Build docs locally
+
+Use Sphinx for building the documentation website locally. Run this via terminal:
+
+```bash
+sphinx-build -b html .\docs .\docs\_build --write-all
+```
+
+```{important}
+Build documentation under a virtual environment session.
+```
+
+```{note}
+The docs website is generated under `docs/_build`
+```
+
+
+## Testing
+
+Test-driven development is recommended. Tests are split into unit tests and benchmark tests.
+
+  * **Unit tests:** Short and targeting feature behavior.
+  * **Benchmark tests:** May be longer, targeting full performance, including outputs.
+
+Run all tests via terminal:
+
+```bash
+python -m unittest discover -s tests -p "test_*.py" -v
+```
+
+For a single test module:
+
+```bash
+python -m tests.unit.test_module
+```
+
+```{important}
+Run tests under a virtual environment session.
+```
+
+### Benchmark tests
+
+Benchmark tests are related to full-integration of features, sometimes associated with input and output data. Some benchmark tests will install heavy datasets from provided URLs.
+
+#### Enable benchmark tests
+
+For running benchmark tests, they must be enabled manually. This is because benchmarks may take too long and deplete resources for CI services.
+
+Enabling benchmarks on Unix:
+
+```bash
+RUN_BENCHMARKS=1
+```
+
+Enabling benchmarks on Windows:
+
+```bash
+$env:RUN_BENCHMARKS="1"
+```
+
+#### Enable large benchmark tests
+
+Large benchmark tests are exceptionally large tests. The same logic applies:
+
+Enabling large benchmark tests on Unix:
+
+```bash
+RUN_BENCHMARKS_XXL=1
+```
+
+Enabling large benchmark tests on Windows:
+
+```bash
+$env:RUN_BENCHMARKS_XXL="1"
+```
+
