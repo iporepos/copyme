@@ -14,10 +14,12 @@ Overview
 
 .. develop some entry notes [CHANGE THIS]:
 
-For new users, the installation instructions allow quick setup and testing of basic functionality.
-For those interested in contributing, development instructions cover cloning, virtual environment setup, installation in development mode, testing, and documentation practices.
-Additional resources, including example Jupyter notebooks and live interactive versions, are available to explore features and usage patterns in detail.
-Following the recommended test-driven and documentation-oriented development practices helps maintain quality and consistency across contributions.
+For casual users, the installation instructions allow quick setup and testing of basic functionality. Additional resources, including example Jupyter notebooks and live interactive versions, are available to explore features and usage patterns in detail.
+
+.. Note::
+
+   For those who want to contribute, see :ref:`Development <development>`
+
 
 .. _installation:
 
@@ -32,14 +34,6 @@ For causal users, add ``copyme`` to a python 3 environment via terminal:
 
     python -m pip install git+https://github.com/iporepos/copyme.git@main
 
-Now test some basic scripting:
-
-.. code-block:: python
-
-    from copyme import module
-    n = module.add(1, 2)
-    print(n)
-    # Output >>> 3
 
 .. _guides:
 
@@ -49,6 +43,7 @@ Guides
 .. develop guiding instructions [CHANGE THIS]:
 
 For those seeking practical guidance on using the tools available in the repo, relevant resources are provided.
+
 Example Jupyter notebooks are available in the repository’s examples folder, along with live, interactive versions on platforms such as Google Colab. These resources illustrate the project’s features, demonstrate typical usage patterns, and allow experimentation with the functionality directly.
 
 .. develop guiding resources here [CHANGE THIS]:
@@ -58,5 +53,25 @@ Examples
 
 Develop examples here
 
-Examples
+A basic script
 --------------------------------------------
+
+.. code-block:: python
+
+    from copyme import module
+
+
+.. code-block:: python
+
+    v = module.add(num1=3, num2=4)
+
+
+.. code-block:: python
+
+    print(v)
+    # [out]: 7
+
+Advanced script
+--------------------------------------------
+
+Develop examples here
