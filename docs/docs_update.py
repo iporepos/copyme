@@ -63,6 +63,7 @@ INDEX_FILE = BUILD_DIR / "index.html"
 # FUNCTIONS
 # ***********************************************************************
 
+
 # FUNCTIONS -- Project-level
 # =======================================================================
 def build_docs():
@@ -73,13 +74,10 @@ def build_docs():
     opens the generated index.html in the default web browser.
     """
     # Run sphinx-build
-    subprocess.run([
-        "sphinx-build",
-        "-b", "html",
-        str(DOCS_DIR),
-        str(BUILD_DIR),
-        "--write-all"
-    ], check=True)
+    subprocess.run(
+        ["sphinx-build", "-b", "html", str(DOCS_DIR), str(BUILD_DIR), "--write-all"],
+        check=True,
+    )
 
     # Open the generated index.html in the default web browser
     webbrowser.open(INDEX_FILE.resolve().as_uri())
