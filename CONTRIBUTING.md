@@ -90,9 +90,9 @@ Unformatted contributions are not going to pass because GitHub checks for style
 consistency.
 ```
 
-### Automating Black
-
-There are tools for automating `black`.
+```{seealso}
+There are tools for automating `black` before commit. See [https://pre-commit.com/](https://pre-commit.com/)
+```
 
 ---
 
@@ -100,12 +100,18 @@ There are tools for automating `black`.
 
 Documentation-oriented development is recommended. Every feature must be documented with standard Sphinx (rST) format.
 
-### Build docs locally
+### Build locally
 
 Use Sphinx for building the documentation website locally. Run this via terminal:
 
 ```bash
 sphinx-build -b html .\docs .\docs\_build --write-all
+```
+
+For automating tasks before and after building, consider run:
+
+```bash
+python ./docs/docs_update.py
 ```
 
 ```{important}

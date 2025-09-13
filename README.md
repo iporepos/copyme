@@ -113,6 +113,7 @@ copyme/
 │    └── outputs/                 # [ignored] tests outputs
 │
 ├── docs/                         # documentation folder
+│    ├── docs_update.rst          # updating script
 │    ├── about.rst                # info about the repo
 │    ├── api.rst                  # api reference using sphinx autodoc
 │    ├── conf.py                  # [CHECK THIS] configuration file for sphinx
