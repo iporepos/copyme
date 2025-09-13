@@ -454,19 +454,23 @@ developing and documentation.</p>
 <p>Unformatted contributions are not going to pass because GitHub checks for style
 consistency.</p>
 </div>
-<section id="automating-black">
-<h3>Automating Black<a class="headerlink" href="#automating-black" title="Link to this heading">#</a></h3>
-<p>There are tools for automating <code class="docutils literal notranslate"><span class="pre">black</span></code>.</p>
-</section>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>There are tools for automating <code class="docutils literal notranslate"><span class="pre">black</span></code> before commit. See <a class="reference external" href="https://pre-commit.com/">https://pre-commit.com/</a></p>
+</div>
 </section>
 <hr class="docutils" />
 <section id="documentation">
 <h2>Documentation<a class="headerlink" href="#documentation" title="Link to this heading">#</a></h2>
 <p>Documentation-oriented development is recommended. Every feature must be documented with standard Sphinx (rST) format.</p>
-<section id="build-docs-locally">
-<h3>Build docs locally<a class="headerlink" href="#build-docs-locally" title="Link to this heading">#</a></h3>
+<section id="build-locally">
+<h3>Build locally<a class="headerlink" href="#build-locally" title="Link to this heading">#</a></h3>
 <p>Use Sphinx for building the documentation website locally. Run this via terminal:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sphinx-build<span class="w"> </span>-b<span class="w"> </span>html<span class="w"> </span>.<span class="se">\d</span>ocs<span class="w"> </span>.<span class="se">\d</span>ocs<span class="se">\_</span>build<span class="w"> </span>--write-all
+</pre></div>
+</div>
+<p>For automating tasks before and after building, consider run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>./docs/docs_update.py
 </pre></div>
 </div>
 <div class="admonition important">
@@ -578,12 +582,9 @@ consistency.</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cloning">Cloning</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing">Installing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#style">Style</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#automating-black">Automating Black</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#style">Style</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-docs-locally">Build docs locally</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-locally">Build locally</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing">Testing</a><ul class="nav section-nav flex-column">
