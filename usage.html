@@ -382,10 +382,11 @@
 <span id="id1"></span><h1>Usage<a class="headerlink" href="#usage" title="Link to this heading">#</a></h1>
 <section id="overview">
 <span id="quickview"></span><h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
-<p>For new users, the installation instructions allow quick setup and testing of basic functionality.
-For those interested in contributing, development instructions cover cloning, virtual environment setup, installation in development mode, testing, and documentation practices.
-Additional resources, including example Jupyter notebooks and live interactive versions, are available to explore features and usage patterns in detail.
-Following the recommended test-driven and documentation-oriented development practices helps maintain quality and consistency across contributions.</p>
+<p>For casual users, the installation instructions allow quick setup and testing of basic functionality. Additional resources, including example Jupyter notebooks and live interactive versions, are available to explore features and usage patterns in detail.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For those who want to contribute, see <a class="reference internal" href="development.html#development"><span class="std std-ref">Development</span></a></p>
+</div>
 </section>
 <section id="installation">
 <span id="id2"></span><h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
@@ -393,23 +394,30 @@ Following the recommended test-driven and documentation-oriented development pra
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python -m pip install git+https://github.com/iporepos/copyme.git@main</span>
 </pre></div>
 </div>
-<p>Now test some basic scripting:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">copyme</span><span class="w"> </span><span class="kn">import</span> <span class="n">module</span>
-<span class="n">n</span> <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-<span class="c1"># Output &gt;&gt;&gt; 3</span>
-</pre></div>
-</div>
 </section>
 <section id="guides">
 <span id="id3"></span><h2>Guides<a class="headerlink" href="#guides" title="Link to this heading">#</a></h2>
-<p>For those seeking practical guidance on using the tools available in the repo, relevant resources are provided.
-Example Jupyter notebooks are available in the repository’s examples folder, along with live, interactive versions on platforms such as Google Colab. These resources illustrate the project’s features, demonstrate typical usage patterns, and allow experimentation with the functionality directly.</p>
+<p>For those seeking practical guidance on using the tools available in the repo, relevant resources are provided.</p>
+<p>Example Jupyter notebooks are available in the repository’s examples folder, along with live, interactive versions on platforms such as Google Colab. These resources illustrate the project’s features, demonstrate typical usage patterns, and allow experimentation with the functionality directly.</p>
 <section id="examples">
 <h3>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h3>
 <p>Develop examples here</p>
-<section id="id4">
-<h4>Examples<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<section id="a-basic-script">
+<h4>A basic script<a class="headerlink" href="#a-basic-script" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">copyme</span><span class="w"> </span><span class="kn">import</span> <span class="n">module</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">num1</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">num2</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="c1"># [out]: 7</span>
+</pre></div>
+</div>
+</section>
+<section id="advanced-script">
+<h4>Advanced script<a class="headerlink" href="#advanced-script" title="Link to this heading">#</a></h4>
+<p>Develop examples here</p>
 </section>
 </section>
 </section>
@@ -466,7 +474,8 @@ Example Jupyter notebooks are available in the repository’s examples folder, a
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guides">Guides</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Examples</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-basic-script">A basic script</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-script">Advanced script</a></li>
 </ul>
 </li>
 </ul>
