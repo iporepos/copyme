@@ -15,9 +15,18 @@ docs = [
     "sphinx-rtd-theme",             # [EXAMPLE] Sphinx theme
     "pydata-sphinx-theme",          # [EXAMPLE] Sphinx theme
     "sphinx_copybutton",            # [EXAMPLE] Sphinx feature for code blocks
-    "myst-parser",                  # [EXAMPLE] Sphinx feature for markdown files
+    "myst-parser",                  # <--- Sphinx feature for markdown files
     # ... [ADD MORE IF NEDDED]
 ]
 ```
 
+```{note}
 Is better to stay in `rst` format, but this extension allows more flexibility.
+```
+
+```{warning}
+The above admoenition note (and this) is written in the `myst_parser` compatible format
+```
+
+
+

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Usage &#8212; copyme 0.0.1 documentation</title>
+    <title>Development &#8212; copyme 0.0.1 documentation</title>
   
   
   
@@ -44,12 +44,12 @@
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'usage';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'development';</script>
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="API" href="api.html" />
-    <link rel="prev" title="About" href="about.html" />
+    <link rel="next" title="Dummy file" href="dummy.html" />
+    <link rel="prev" title="copyme.mypackage.submodule" href="generated/copyme.mypackage.submodule.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -142,8 +142,8 @@
 </li>
 
 
-<li class="nav-item current active">
-  <a class="nav-link nav-internal" href="#">
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="usage.html">
     Usage
   </a>
 </li>
@@ -156,8 +156,8 @@
 </li>
 
 
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="development.html">
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
     Development
   </a>
 </li>
@@ -266,8 +266,8 @@
 </li>
 
 
-<li class="nav-item current active">
-  <a class="nav-link nav-internal" href="#">
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="usage.html">
     Usage
   </a>
 </li>
@@ -280,8 +280,8 @@
 </li>
 
 
-<li class="nav-item ">
-  <a class="nav-link nav-internal" href="development.html">
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
     Development
   </a>
 </li>
@@ -359,7 +359,7 @@
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Usage</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Development</span></li>
   </ul>
 </nav>
 </div>
@@ -378,38 +378,152 @@
                   
   <a class="reference external image-reference" href="https://github.com/iporepos/copyme"><img alt="GitHub repository" src="https://img.shields.io/badge/GitHub-Source-black?logo=github" />
 </a>
-<section id="usage">
-<span id="id1"></span><h1>Usage<a class="headerlink" href="#usage" title="Link to this heading">#</a></h1>
-<section id="overview">
-<span id="quickview"></span><h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
-<p>For new users, the installation instructions allow quick setup and testing of basic functionality.
-For those interested in contributing, development instructions cover cloning, virtual environment setup, installation in development mode, testing, and documentation practices.
-Additional resources, including example Jupyter notebooks and live interactive versions, are available to explore features and usage patterns in detail.
-Following the recommended test-driven and documentation-oriented development practices helps maintain quality and consistency across contributions.</p>
-</section>
-<section id="installation">
-<span id="id2"></span><h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
-<p>For causal users, add <code class="docutils literal notranslate"><span class="pre">copyme</span></code> to a python 3 environment via terminal:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python -m pip install git+https://github.com/iporepos/copyme.git@main</span>
+<span class="target" id="development"></span><section id="development">
+<h1>Development<a class="headerlink" href="#development" title="Link to this heading">#</a></h1>
+<p>This section provides guidance for those who wish to contribute to the project.
+It includes instructions for setting up the development environment, cloning the repository, installing the project in development mode, running tests, and building the documentation.</p>
+<p>To ensure that new features and changes adhere to project standards, maintain quality, and keep the documentation up to date, contributors are required to follow:</p>
+<ul class="simple">
+<li><p>Style-consistent formatting;</p></li>
+<li><p>Documentation-oriented practices;</p></li>
+<li><p>Test-driven development;</p></li>
+</ul>
+<section id="cloning">
+<h2>Cloning<a class="headerlink" href="#cloning" title="Link to this heading">#</a></h2>
+<p>Use your IDE for authenticate in GitHub and clone the repo branch of interest
+in your local system.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Of course, Git must be set as the version control system</p>
+</div>
+<p>Alternatively, clone via terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># [CHECK THIS] adapt this for branches or other repos</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/iporepos/copyme.git
 </pre></div>
 </div>
-<p>Now test some basic scripting:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">copyme</span><span class="w"> </span><span class="kn">import</span> <span class="n">module</span>
-<span class="n">n</span> <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-<span class="c1"># Output &gt;&gt;&gt; 3</span>
+</section>
+<section id="installing">
+<h2>Installing<a class="headerlink" href="#installing" title="Link to this heading">#</a></h2>
+<p>For developing, it’s recommended to set up a python
+<strong>Virtual Environment</strong> (<code class="docutils literal notranslate"><span class="pre">venv</span></code>) locally for developing the repo.
+This is best for avoiding falling into a <a class="reference external" href="https://en.wikipedia.org/wiki/Dependency_hell">dependency hell</a> with your
+other projects.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Of course, you need Python installed in your system</p>
+</div>
+<p>Move to the repo root folder:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># [CHANGE THIS] set your own actual local path</span>
+<span class="nb">cd</span><span class="w"> </span>./path/to/<span class="o">{</span>thislib<span class="o">}</span>
+</pre></div>
+</div>
+<p>Create a python <code class="docutils literal notranslate"><span class="pre">venv</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+</pre></div>
+</div>
+<p>Activate the <code class="docutils literal notranslate"><span class="pre">venv</span></code> session.</p>
+<p>On Unix (Linux/Mac):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+</pre></div>
+</div>
+<p>Activate the <code class="docutils literal notranslate"><span class="pre">venv</span></code> on Windows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>.<span class="w"> </span>.venv<span class="se">\S</span>cripts<span class="se">\A</span>ctivate.ps1
+</pre></div>
+</div>
+<p>Now, under the <code class="docutils literal notranslate"><span class="pre">venv</span></code> session, install all
+dependencies in editable mode <code class="docutils literal notranslate"><span class="pre">-e</span></code> (including <code class="docutils literal notranslate"><span class="pre">dev</span></code> and <code class="docutils literal notranslate"><span class="pre">docs</span></code> dependencies with <code class="docutils literal notranslate"><span class="pre">.[dev,</span> <span class="pre">docs]</span></code>):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.<span class="o">[</span>dev,docs<span class="o">]</span>
+</pre></div>
+</div>
+<p>This will install all dependecies needed both for
+developing and documentation.</p>
+</section>
+<hr class="docutils" />
+<section id="style">
+<h2>Style<a class="headerlink" href="#style" title="Link to this heading">#</a></h2>
+<p>In this project, we enforce using <a class="reference external" href="https://black.readthedocs.io">Black</a> to ensure a consistent code style.</p>
+<p>Since<code class="docutils literal notranslate"><span class="pre">black</span></code> is listed in dev dependencies, you may run manually before push:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>black<span class="w"> </span>.
+</pre></div>
+</div>
+<blockquote>
+<div><p>from the repo root, under the venv session</p>
+</div></blockquote>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Unformatted contributions are not going to pass because GitHub checks for style
+consistency.</p>
+</div>
+<section id="automating-black">
+<h3>Automating Black<a class="headerlink" href="#automating-black" title="Link to this heading">#</a></h3>
+<p>There are tools for automating <code class="docutils literal notranslate"><span class="pre">black</span></code>.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Link to this heading">#</a></h2>
+<p>Documentation-oriented development is recommended. Every feature must be documented with standard Sphinx (rST) format.</p>
+<section id="build-docs-locally">
+<h3>Build docs locally<a class="headerlink" href="#build-docs-locally" title="Link to this heading">#</a></h3>
+<p>Use Sphinx for building the documentation website locally. Run this via terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sphinx-build<span class="w"> </span>-b<span class="w"> </span>html<span class="w"> </span>.<span class="se">\d</span>ocs<span class="w"> </span>.<span class="se">\d</span>ocs<span class="se">\_</span>build<span class="w"> </span>--write-all
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Build documentation under a virtual environment session.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The docs website is generated under <code class="docutils literal notranslate"><span class="pre">docs/_build</span></code></p>
+</div>
+</section>
+</section>
+<section id="testing">
+<h2>Testing<a class="headerlink" href="#testing" title="Link to this heading">#</a></h2>
+<p>Test-driven development is recommended. Tests are split into unit tests and benchmark tests.</p>
+<ul class="simple">
+<li><p><strong>Unit tests:</strong> Short and targeting feature behavior.</p></li>
+<li><p><strong>Benchmark tests:</strong> May be longer, targeting full performance, including outputs.</p></li>
+</ul>
+<p>Run all tests via terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>unittest<span class="w"> </span>discover<span class="w"> </span>-s<span class="w"> </span>tests<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;test_*.py&quot;</span><span class="w"> </span>-v
+</pre></div>
+</div>
+<p>For a single test module:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>tests.unit.test_module
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Run tests under a virtual environment session.</p>
+</div>
+<section id="benchmark-tests">
+<h3>Benchmark tests<a class="headerlink" href="#benchmark-tests" title="Link to this heading">#</a></h3>
+<p>Benchmark tests are related to full-integration of features, sometimes associated with input and output data. Some benchmark tests will install heavy datasets from provided URLs.</p>
+<section id="enable-benchmark-tests">
+<h4>Enable benchmark tests<a class="headerlink" href="#enable-benchmark-tests" title="Link to this heading">#</a></h4>
+<p>For running benchmark tests, they must be enabled manually. This is because benchmarks may take too long and deplete resources for CI services.</p>
+<p>Enabling benchmarks on Unix:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">RUN_BENCHMARKS</span><span class="o">=</span><span class="m">1</span>
+</pre></div>
+</div>
+<p>Enabling benchmarks on Windows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$env</span>:RUN_BENCHMARKS<span class="o">=</span><span class="s2">&quot;1&quot;</span>
 </pre></div>
 </div>
 </section>
-<section id="guides">
-<span id="id3"></span><h2>Guides<a class="headerlink" href="#guides" title="Link to this heading">#</a></h2>
-<p>For those seeking practical guidance on using the tools available in the repo, relevant resources are provided.
-Example Jupyter notebooks are available in the repository’s examples folder, along with live, interactive versions on platforms such as Google Colab. These resources illustrate the project’s features, demonstrate typical usage patterns, and allow experimentation with the functionality directly.</p>
-<section id="examples">
-<h3>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h3>
-<p>Develop examples here</p>
-<section id="id4">
-<h4>Examples<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<section id="enable-large-benchmark-tests">
+<h4>Enable large benchmark tests<a class="headerlink" href="#enable-large-benchmark-tests" title="Link to this heading">#</a></h4>
+<p>Large benchmark tests are exceptionally large tests. The same logic applies:</p>
+<p>Enabling large benchmark tests on Unix:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">RUN_BENCHMARKS_XXL</span><span class="o">=</span><span class="m">1</span>
+</pre></div>
+</div>
+<p>Enabling large benchmark tests on Windows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$env</span>:RUN_BENCHMARKS_XXL<span class="o">=</span><span class="s2">&quot;1&quot;</span>
+</pre></div>
+</div>
 </section>
 </section>
 </section>
@@ -426,20 +540,20 @@ Example Jupyter notebooks are available in the repository’s examples folder, a
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="about.html"
+       href="generated/copyme.mypackage.submodule.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">About</p>
+        <p class="prev-next-title">copyme.mypackage.submodule</p>
       </div>
     </a>
     <a class="right-next"
-       href="api.html"
+       href="dummy.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">API</p>
+        <p class="prev-next-title">Dummy file</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -462,11 +576,20 @@ Example Jupyter notebooks are available in the repository’s examples folder, a
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guides">Guides</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cloning">Cloning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing">Installing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#style">Style</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#automating-black">Automating Black</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-docs-locally">Build docs locally</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing">Testing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmark-tests">Benchmark tests</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#enable-benchmark-tests">Enable benchmark tests</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#enable-large-benchmark-tests">Enable large benchmark tests</a></li>
 </ul>
 </li>
 </ul>
@@ -478,7 +601,7 @@ Example Jupyter notebooks are available in the repository’s examples folder, a
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/usage.rst.txt"
+      <li><a href="_sources/development.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div></div>

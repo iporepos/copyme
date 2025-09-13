@@ -154,11 +154,28 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../dummy.html">
+  <a class="nav-link nav-internal" href="../../development.html">
+    Development
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../dummy.html">
     Dummy file
   </a>
 </li>
 
+                </ul>
+            </li>
+            
   </ul>
 </nav></div>
       
@@ -259,6 +276,13 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../development.html">
+    Development
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../../dummy.html">
     Dummy file
   </a>
@@ -342,28 +366,28 @@
                 <article class="bd-article">
                   
   <h1>Source code for copyme.module</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;  </span>
-<span class="sd">{Short module description (1-3 sentences)}  </span>
-<span class="sd">todo docstring  </span>
-<span class="sd">  </span>
-<span class="sd">Features  </span>
-<span class="sd">--------  </span>
-<span class="sd">todo docstring  </span>
-<span class="sd">  </span>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">{Short module description (1-3 sentences)}</span>
+<span class="sd">todo docstring</span>
+
+<span class="sd">Features</span>
+<span class="sd">--------</span>
+<span class="sd">todo docstring</span>
+
 <span class="sd">* {feature 1}</span>
 <span class="sd">* {feature 2}</span>
 <span class="sd">* {feature 3}</span>
 <span class="sd">* {etc}</span>
-<span class="sd"> </span>
-<span class="sd">Overview  </span>
-<span class="sd">--------  </span>
-<span class="sd">todo docstring  </span>
-<span class="sd">{Overview description}  </span>
-<span class="sd">  </span>
-<span class="sd">Examples  </span>
-<span class="sd">--------  </span>
-<span class="sd">todo docstring  </span>
-<span class="sd">{Examples in rST} </span>
+
+<span class="sd">Overview</span>
+<span class="sd">--------</span>
+<span class="sd">todo docstring</span>
+<span class="sd">{Overview description}</span>
+
+<span class="sd">Examples</span>
+<span class="sd">--------</span>
+<span class="sd">todo docstring</span>
+<span class="sd">{Examples in rST}</span>
 
 <span class="sd">Print a message</span>
 
@@ -374,64 +398,65 @@
 <span class="sd">    # [Output] &gt;&gt; &#39;Hello world!&#39;</span>
 
 
-<span class="sd">&quot;&quot;&quot;</span>  
-  
-<span class="c1"># ***********************************************************************  </span>
-<span class="c1"># IMPORTS  </span>
-<span class="c1"># ***********************************************************************  </span>
-<span class="c1"># import modules from other libs  </span>
-  
-<span class="c1"># Native imports  </span>
-<span class="c1"># =======================================================================  </span>
-<span class="c1"># import {module}  </span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># ***********************************************************************</span>
+<span class="c1"># IMPORTS</span>
+<span class="c1"># ***********************************************************************</span>
+<span class="c1"># import modules from other libs</span>
+
+<span class="c1"># Native imports</span>
+<span class="c1"># =======================================================================</span>
+<span class="c1"># import {module}</span>
 <span class="c1"># ... {develop}</span>
-  
-<span class="c1"># External imports  </span>
-<span class="c1"># =======================================================================  </span>
-<span class="c1"># import {module}  </span>
+
+<span class="c1"># External imports</span>
+<span class="c1"># =======================================================================</span>
+<span class="c1"># import {module}</span>
 <span class="c1"># ... {develop}</span>
-  
-<span class="c1"># Project-level imports  </span>
-<span class="c1"># =======================================================================  </span>
-<span class="c1"># import {module}  </span>
+
+<span class="c1"># Project-level imports</span>
+<span class="c1"># =======================================================================</span>
+<span class="c1"># import {module}</span>
 <span class="c1"># ... {develop}</span>
-  
-  
-<span class="c1"># ***********************************************************************  </span>
-<span class="c1"># CONSTANTS  </span>
-<span class="c1"># ***********************************************************************  </span>
-<span class="c1"># define constants in uppercase  </span>
-    
-<span class="c1"># CONSTANTS -- Project-level  </span>
-<span class="c1"># =======================================================================  </span>
-<span class="c1"># ... {develop}  </span>
-  
-<span class="c1"># Subsubsection example  </span>
-<span class="c1"># -----------------------------------------------------------------------  </span>
-<span class="n">HELLO</span> <span class="o">=</span> <span class="s2">&quot;Hello World!&quot;</span>  <span class="c1"># example  </span>
+
+
+<span class="c1"># ***********************************************************************</span>
+<span class="c1"># CONSTANTS</span>
+<span class="c1"># ***********************************************************************</span>
+<span class="c1"># define constants in uppercase</span>
+
+<span class="c1"># CONSTANTS -- Project-level</span>
+<span class="c1"># =======================================================================</span>
 <span class="c1"># ... {develop}</span>
-  
-<span class="c1"># CONSTANTS -- Module-level  </span>
-<span class="c1"># =======================================================================  </span>
-<span class="c1"># ... {develop}   </span>
-  
-  
-  
-<span class="c1"># ***********************************************************************  </span>
-<span class="c1"># FUNCTIONS  </span>
-<span class="c1"># ***********************************************************************  </span>
-  
-<span class="c1"># FUNCTIONS -- Project-level  </span>
-<span class="c1"># =======================================================================  </span>
-  
-<span class="c1"># Demo example  </span>
-<span class="c1"># -----------------------------------------------------------------------  </span>
+
+<span class="c1"># Subsubsection example</span>
+<span class="c1"># -----------------------------------------------------------------------</span>
+<span class="n">HELLO</span> <span class="o">=</span> <span class="s2">&quot;Hello World!&quot;</span>  <span class="c1"># example</span>
+<span class="c1"># ... {develop}</span>
+
+<span class="c1"># CONSTANTS -- Module-level</span>
+<span class="c1"># =======================================================================</span>
+<span class="c1"># ... {develop}</span>
+
+
+<span class="c1"># ***********************************************************************</span>
+<span class="c1"># FUNCTIONS</span>
+<span class="c1"># ***********************************************************************</span>
+
+<span class="c1"># FUNCTIONS -- Project-level</span>
+<span class="c1"># =======================================================================</span>
+
+
+<span class="c1"># Demo example</span>
+<span class="c1"># -----------------------------------------------------------------------</span>
 <div class="viewcode-block" id="myfunc">
 <a class="viewcode-back" href="../../generated/copyme.module.html#copyme.module.myfunc">[docs]</a>
-<span class="k">def</span><span class="w"> </span><span class="nf">myfunc</span><span class="p">(</span><span class="n">parameter1</span><span class="p">):</span>  
-    <span class="c1"># todo docstring  </span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">parameter1</span><span class="p">)</span>  
-    <span class="k">return</span> <span class="kc">None</span>  </div>
+<span class="k">def</span><span class="w"> </span><span class="nf">myfunc</span><span class="p">(</span><span class="n">parameter1</span><span class="p">):</span>
+    <span class="c1"># todo docstring</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">parameter1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">None</span></div>
+
 
 
 <div class="viewcode-block" id="add">
@@ -450,6 +475,7 @@
     <span class="k">return</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span></div>
 
 
+
 <div class="viewcode-block" id="multiply">
 <a class="viewcode-back" href="../../generated/copyme.module.html#copyme.module.multiply">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">multiply</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">):</span>
@@ -466,23 +492,24 @@
     <span class="k">return</span> <span class="n">num1</span> <span class="o">*</span> <span class="n">num2</span></div>
 
 
-<span class="c1"># ... {develop}</span>
-  
-<span class="c1"># FUNCTIONS -- Module-level  </span>
-<span class="c1"># =======================================================================  </span>
-<span class="c1"># ... {develop}  </span>
-  
-  
 
-<span class="c1"># ***********************************************************************  </span>
-<span class="c1"># CLASSES  </span>
-<span class="c1"># ***********************************************************************  </span>
-  
-<span class="c1"># CLASSES -- Project-level  </span>
-<span class="c1"># =======================================================================  </span>
-  
-<span class="c1"># Demo example  </span>
-<span class="c1"># -----------------------------------------------------------------------  </span>
+<span class="c1"># ... {develop}</span>
+
+<span class="c1"># FUNCTIONS -- Module-level</span>
+<span class="c1"># =======================================================================</span>
+<span class="c1"># ... {develop}</span>
+
+
+<span class="c1"># ***********************************************************************</span>
+<span class="c1"># CLASSES</span>
+<span class="c1"># ***********************************************************************</span>
+
+<span class="c1"># CLASSES -- Project-level</span>
+<span class="c1"># =======================================================================</span>
+
+
+<span class="c1"># Demo example</span>
+<span class="c1"># -----------------------------------------------------------------------</span>
 <div class="viewcode-block" id="MyClass">
 <a class="viewcode-back" href="../../generated/copyme.module.html#copyme.module.MyClass">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">MyClass</span><span class="p">:</span>
@@ -528,26 +555,26 @@
 </div>
 
 
+
 <span class="c1"># ... {develop}</span>
-  
-<span class="c1"># CLASSES -- Module-level  </span>
-<span class="c1"># =======================================================================  </span>
-<span class="c1"># ... {develop}  </span>
 
-  
+<span class="c1"># CLASSES -- Module-level</span>
+<span class="c1"># =======================================================================</span>
+<span class="c1"># ... {develop}</span>
 
-<span class="c1"># ***********************************************************************  </span>
-<span class="c1"># SCRIPT  </span>
-<span class="c1"># ***********************************************************************  </span>
-<span class="c1"># standalone behaviour as a script  </span>
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>  
-  
-    <span class="c1"># Script section  </span>
-    <span class="c1"># ===================================================================       </span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello world!&quot;</span><span class="p">)</span>  
+
+<span class="c1"># ***********************************************************************</span>
+<span class="c1"># SCRIPT</span>
+<span class="c1"># ***********************************************************************</span>
+<span class="c1"># standalone behaviour as a script</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+
+    <span class="c1"># Script section</span>
+    <span class="c1"># ===================================================================</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello world!&quot;</span><span class="p">)</span>
     <span class="c1"># ... {develop}</span>
 
-    <span class="c1"># Script subsection  </span>
+    <span class="c1"># Script subsection</span>
     <span class="c1"># -------------------------------------------------------------------</span>
     <span class="c1"># ... {develop}</span>
 </pre></div>

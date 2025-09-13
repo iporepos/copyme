@@ -1,3 +1,9 @@
+.. a cool badge for the source. replace or remove if appropriate [CHANGE THIS]:
+
+.. include:: ./badge_source.rst
+
+.. _api:
+
 API
 ############################################
 
