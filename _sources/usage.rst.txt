@@ -30,6 +30,7 @@ Installation
 
 For causal users, add ``copyme`` to a python 3 environment via terminal:
 
+
 .. code-block:: console
 
     python -m pip install git+https://github.com/iporepos/copyme.git@main
@@ -71,7 +72,12 @@ A basic script
     print(v)
     # [out]: 7
 
+
+.. [ADD MORE IF NEEDED]
+
 Advanced script
 --------------------------------------------
 
 Develop examples here
+
+.. [ADD MORE IF NEEDED]
