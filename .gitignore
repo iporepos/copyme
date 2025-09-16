@@ -67,7 +67,7 @@ old/
 
 # PyCharm folders
 # -----------------------------------------------------------------------
-.idea/
+/.idea/
 
 
 # GITHUB STANDARD IGNORE STATEMENTS
