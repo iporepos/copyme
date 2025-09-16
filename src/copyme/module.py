@@ -56,7 +56,6 @@ Print a message
 # ... {develop}
 
 
-
 # CONSTANTS
 # ***********************************************************************
 # define constants in uppercase
@@ -75,7 +74,6 @@ HELLO = "Hello World!"  # example
 # ... {develop}
 
 
-
 # FUNCTIONS
 # ***********************************************************************
 
@@ -90,6 +88,7 @@ def myfunc(parameter1):
     print(parameter1)
     ls_variable = [1, 2, 3, "ok", [2, 3, 4, 5, 6]]
     return None
+
 
 def add(num1, num2):
     """
@@ -124,7 +123,6 @@ def multiply(num1, num2):
 # FUNCTIONS -- Module-level
 # =======================================================================
 # ... {develop}
-
 
 
 # CLASSES
@@ -172,7 +170,6 @@ class MyClass:
 # CLASSES -- Module-level
 # =======================================================================
 # ... {develop}
-
 
 
 # SCRIPT
