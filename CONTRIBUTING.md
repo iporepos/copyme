@@ -186,7 +186,7 @@ python -m tests.unit.test_module
 See more in [unittest library](https://docs.python.org/3/library/doctest.html) for details on unit tests.
 ```
 
-```note
+```{note}
 Example tests can be included in unit tests with their own testing script.
 A template for this is provided in ``/tests/test_doctest.py``.
 ```
