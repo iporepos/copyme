@@ -119,40 +119,85 @@ Build documentation under a virtual environment session.
 ```
 
 ```{note}
-The docs website is generated under `docs/_build`
+The docs website is generated under ``docs/_build``
 ```
 
 
 ## Testing
 
-Test-driven development is recommended. Tests are split into unit tests and benchmark tests.
+Test-driven development is recommended. Tests are split into the following categories:
 
-  * **Unit tests:** Short and targeting feature behavior.
-  * **Benchmark tests:** May be longer, targeting full performance, including outputs.
-
-Run all tests via terminal:
-
-```bash
-python -m unittest discover -s tests -p "test_*.py" -v
-```
-
-For a single test module:
-
-```bash
-python -m tests.unit.test_module
-```
+  * **Example tests** - single line tests presented in docstrings.
+  * **Unit tests** - short and targeting feature behavior.
+  * **Benchmark tests** - may take longer time, targeting full performance, includes inputs and outputs evaluations.
 
 ```{important}
 Run tests under a virtual environment session.
 ```
 
+### Example tests
+
+Create single-line example tests in docstring:
+
+```python
+def add(num1, num2):
+	"""
+	
+	**Examples**
+	
+	>>> add(1, 2)
+	3
+		
+	"""
+	return num1 + num2
+```
+
+Test the module using ``doctest``:
+```bash
+python -m doctest -v /path/to/module.py
+```
+
+Alternatively, test the module in the script part:
+```python
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
+```
+
+```{seealso}
+See more in [doctest library](https://docs.python.org/3/library/doctest.html) for details on example tests.
+```
+
+### Unit tests
+
+Run all unit tests in ``/tests`` via terminal:
+
+```bash
+python -m unittest discover -s tests -p "test_*.py" -v
+```
+
+For a single unit test module:
+
+```bash
+python -m tests.unit.test_module
+```
+
+```{seealso}
+See more in [unittest library](https://docs.python.org/3/library/doctest.html) for details on unit tests.
+```
+
+```note
+Example tests can be included in unit tests with their own testing script.
+A template for this is provided in ``/tests/test_doctest.py``.
+```
+
 ### Benchmark tests
 
-Benchmark tests are related to full-integration of features, sometimes associated with input and output data. Some benchmark tests will install heavy datasets from provided URLs.
+Benchmark tests are unit tests related to full-integration of features, sometimes associated with input and output data. Some benchmark tests will install heavy datasets from provided URLs.
 
 #### Enable benchmark tests
 
-For running benchmark tests, they must be enabled manually. This is because benchmarks may take too long and deplete resources for CI services.
+For running benchmark tests, they must be enabled manually. This is because benchmarks may take too long and can deplete resources for CI services. Once enabled, just run the unit tests as usual.
 
 Enabling benchmarks on Unix:
 

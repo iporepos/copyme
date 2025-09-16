@@ -100,6 +100,15 @@ def add(num1, num2):
     :type num2: int or float
     :return: sum of numbers
     :rtype: int or float
+
+    **Examples**
+
+    >>> add(2, 3)
+    5
+
+    >>> add(20, 2.3)
+    22.3
+
     """
     return num1 + num2
 
@@ -114,6 +123,15 @@ def multiply(num1, num2):
     :type num2: int or float
     :return: product of numbers
     :rtype: int or float
+
+    **Examples**
+
+    >>> multiply(2, 3)
+    6
+
+    >>> multiply(20, 2)
+    40
+
     """
     return num1 * num2
 
@@ -176,6 +194,11 @@ class MyClass:
 # ***********************************************************************
 # standalone behaviour as a script
 if __name__ == "__main__":
+    # Test doctests
+    # ===================================================================
+    import doctest
+
+    doctest.testmod()
 
     # Script section
     # ===================================================================
