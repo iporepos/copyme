@@ -54,7 +54,6 @@ from pathlib import Path
 # None required
 
 
-
 # CONSTANTS
 # ***********************************************************************
 
@@ -63,7 +62,6 @@ from pathlib import Path
 DOCS_DIR = Path("docs")
 BUILD_DIR = DOCS_DIR / "_build"
 INDEX_FILE = BUILD_DIR / "index.html"
-
 
 
 # FUNCTIONS
@@ -92,7 +90,6 @@ def build_docs():
     print(f"Documentation built successfully! Opened {INDEX_FILE}")
 
 
-
 # FUNCTIONS -- Module-level
 # =======================================================================
 def delete_generated():
@@ -111,7 +108,6 @@ def delete_generated():
 # CLASSES
 # ***********************************************************************
 # No classes needed for this module
-
 
 
 # SCRIPT

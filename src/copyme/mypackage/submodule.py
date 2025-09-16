@@ -60,7 +60,6 @@ from copyme.module import HELLO  # import from internal modules
 # ... {develop}
 
 
-
 # CONSTANTS
 # ***********************************************************************
 # define constants in uppercase
@@ -77,7 +76,6 @@ HELLO2 = "Hello Mars!"  # example
 # CONSTANTS -- Module-level
 # =======================================================================
 # ... {develop}
-
 
 
 # FUNCTIONS
@@ -100,7 +98,6 @@ def myfunc2(parameter1):
 # FUNCTIONS -- Module-level
 # =======================================================================
 # ... {develop}
-
 
 
 # CLASSES
@@ -148,7 +145,6 @@ class MySubClass:
 # CLASSES -- Module-level
 # =======================================================================
 # ... {develop}
-
 
 
 # SCRIPT
