@@ -40,15 +40,15 @@ When copying files from this repo, remember that they are _templates_. So:
 This repository relies on several **configuration files** that are essential for the proper functioning of the template. Each file has a specific role, and some of them work together, so they should be edited thoughtfully. Below is an overview of the main configuration files and what you should know about them.
 
 
-| File | Purpose | Key Notes |
-|------|---------|-----------|
-| **`pyproject.toml`** | Project configuration | Manages dependencies, build system, and project settings. Update when adding dependencies or changing project structure. |
-| **`.gitignore`** | Git ignore rules | Specifies files/folders Git should ignore (e.g., temp files, datasets, build outputs). Keeps repo clean. |
-| **`.github/workflows/style.yml`** | Style CI configuration | Runs code style checks using [Black](https://black.readthedocs.io/en/stable/). Depends on `pyproject.toml` dev dependencies. |
-| **`docs/conf.py`** | Docs configuration | Configures [Sphinx](https://www.sphinx-doc.org/en/master/index.html) for building documentation. Update if project structure changes. |
-| **`.github/workflows/docs.yml`** | Docs CI configuration | Automates online docs build. Relies on `pyproject.toml` and `docs/conf.py`. Requires extra steps (see file). |
-| **`tests/conftest.py`** | Testing configuration | Provides shared fixtures and settings for tests. Can be customized to fit project needs. |
-| **`.github/workflows/tests.yml`** | Testing CI configuration | Runs automated unit tests on CI. Ensures code correctness after changes. |
+| File                               | Purpose | Key Notes |
+|------------------------------------|---------|-----------|
+| **`pyproject.toml`**               | Project configuration | Manages dependencies, build system, and project settings. Update when adding dependencies or changing project structure. |
+| **`.gitignore`**                   | Git ignore rules | Specifies files/folders Git should ignore (e.g., temp files, datasets, build outputs). Keeps repo clean. |
+| **`.github/workflows/style.yaml`** | Style CI configuration | Runs code style checks using [Black](https://black.readthedocs.io/en/stable/). Depends on `pyproject.toml` dev dependencies. |
+| **`docs/conf.py`**                 | Docs configuration | Configures [Sphinx](https://www.sphinx-doc.org/en/master/index.html) for building documentation. Update if project structure changes. |
+| **`.github/workflows/docs.yaml`**  | Docs CI configuration | Automates online docs build. Relies on `pyproject.toml` and `docs/conf.py`. Requires extra steps (see file). |
+| **`tests/conftest.py`**            | Testing configuration | Provides shared fixtures and settings for tests. Can be customized to fit project needs. |
+| **`.github/workflows/tests.yaml`** | Testing CI configuration | Runs automated unit tests on CI. Ensures code correctness after changes. |
 
 > [!NOTE]  
 > All config files are commented with recommended actions and extra steps.

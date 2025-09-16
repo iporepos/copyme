@@ -1,3 +1,8 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+#
+# Copyright (C) 2025 The Project Authors
+# See pyproject.toml for authors/maintainers.
+# See LICENSE for license details.
 """
 Sphinx Documentation Builder
 ----------------------------
@@ -19,17 +24,17 @@ navigating to the build folder.
 
 Examples
 --------
-Build docs and open index.html:
+Update docs
 
-.. code-block:: python
+.. code-block:: bash
 
-    from sphinx_builder import build_docs
+    python -m ./docs/docs_update.py
 
-    build_docs()
+
 
 """
 
-# ***********************************************************************
+
 # IMPORTS
 # ***********************************************************************
 
@@ -37,6 +42,7 @@ Build docs and open index.html:
 # =======================================================================
 import subprocess
 import webbrowser
+import glob
 from pathlib import Path
 
 # External imports
@@ -48,7 +54,7 @@ from pathlib import Path
 # None required
 
 
-# ***********************************************************************
+
 # CONSTANTS
 # ***********************************************************************
 
@@ -59,7 +65,7 @@ BUILD_DIR = DOCS_DIR / "_build"
 INDEX_FILE = BUILD_DIR / "index.html"
 
 
-# ***********************************************************************
+
 # FUNCTIONS
 # ***********************************************************************
 
@@ -73,6 +79,8 @@ def build_docs():
     This function runs the Sphinx build command with HTML output, then
     opens the generated index.html in the default web browser.
     """
+    # Clean generated files
+    delete_generated()
     # Run sphinx-build
     subprocess.run(
         ["sphinx-build", "-b", "html", str(DOCS_DIR), str(BUILD_DIR), "--write-all"],
@@ -84,13 +92,28 @@ def build_docs():
     print(f"Documentation built successfully! Opened {INDEX_FILE}")
 
 
-# ***********************************************************************
+
+# FUNCTIONS -- Module-level
+# =======================================================================
+def delete_generated():
+    """
+    Delete all ``rst`` generated files prior to build.
+    """
+    ls_files = glob.glob("./generated/*.rst")
+    if len(ls_files) == 0:
+        pass
+    else:
+        for f in ls_files:
+            os.remove(f)
+    return None
+
+
 # CLASSES
 # ***********************************************************************
 # No classes needed for this module
 
 
-# ***********************************************************************
+
 # SCRIPT
 # ***********************************************************************
 if __name__ == "__main__":
