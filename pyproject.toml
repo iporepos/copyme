@@ -46,7 +46,7 @@ build-backend = "setuptools.build_meta"
 # The name of your package/project
 name = "copyme"          # <-- [CHANGE THIS] set with your project name
 # Version number
-version = "0.0.1"        # <-- [CHANGE THIS] Set version
+version = "0.1.1"        # <-- [CHANGE THIS] Set version
 # Short description
 description = "A simple template for python development."   # <-- [CHANGE THIS]
 # Keywords (optional) for search on PyPI

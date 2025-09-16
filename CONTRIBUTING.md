@@ -78,7 +78,7 @@ developing and documentation.
 
 In this project, we enforce using [Black](https://black.readthedocs.io) to ensure a consistent code style. 
 
-Since`black` is listed in dev dependencies, you may run manually before push:
+Since `black` is listed in dev dependencies, you may run manually before push:
 
 ```bash
 black .

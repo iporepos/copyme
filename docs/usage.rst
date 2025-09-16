@@ -16,7 +16,7 @@ Overview
 
 For casual users, the installation instructions allow quick setup and testing of basic functionality. Additional resources, including example Jupyter notebooks and live interactive versions, are available to explore features and usage patterns in detail.
 
-.. Note::
+.. seealso::
 
    For those who want to contribute, see :ref:`Development <development>`
 
@@ -28,7 +28,7 @@ Installation
 
 .. develop installation instructions [CHANGE THIS]:
 
-For causal users, add ``copyme`` to a python 3 environment via terminal:
+For causal users, intall ``copyme`` to a Python 3 environment via terminal:
 
 
 .. code-block:: console

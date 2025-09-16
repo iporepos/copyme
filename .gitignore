@@ -27,6 +27,8 @@ bench*.py
 # Deprecated files conventions (e.g. '__mymodule.py')
 # -----------------------------------------------------------------------
 __*.*
+# Exception
+!__init__.py
 # ... [ADD MORE IF NEEDED]
 
 # Heavy data files
@@ -52,6 +54,7 @@ tests/outputs/
 extra/
 misc/
 scripts/
+_scripts/
 old/
 # ... [ADD MORE IF NEEDED]
 
