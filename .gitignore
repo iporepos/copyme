@@ -43,13 +43,13 @@ __*.*
 *.zip
 # ... [ADD MORE IF NEEDED]
 
+
 # Folders
 # =======================================================================
 
 # Tests
 # -----------------------------------------------------------------------
 # ignore folders in tests
-
 # any subfolder under tests/data/ is ignored
 tests/data/*/
 
@@ -64,6 +64,10 @@ scripts/
 _scripts/
 old/
 # ... [ADD MORE IF NEEDED]
+
+# PyCharm folders
+# -----------------------------------------------------------------------
+.idea/
 
 
 # GITHUB STANDARD IGNORE STATEMENTS
