@@ -485,29 +485,71 @@ consistency.</p>
 </section>
 <section id="testing">
 <h2>Testing<a class="headerlink" href="#testing" title="Link to this heading">#</a></h2>
-<p>Test-driven development is recommended. Tests are split into unit tests and benchmark tests.</p>
+<p>Test-driven development is recommended. Tests are split into the following categories:</p>
 <ul class="simple">
-<li><p><strong>Unit tests:</strong> Short and targeting feature behavior.</p></li>
-<li><p><strong>Benchmark tests:</strong> May be longer, targeting full performance, including outputs.</p></li>
+<li><p><strong>Example tests</strong> - single line tests presented in docstrings.</p></li>
+<li><p><strong>Unit tests</strong> - short and targeting feature behavior.</p></li>
+<li><p><strong>Benchmark tests</strong> - may take longer time, targeting full performance, includes inputs and outputs evaluations.</p></li>
 </ul>
-<p>Run all tests via terminal:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>unittest<span class="w"> </span>discover<span class="w"> </span>-s<span class="w"> </span>tests<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;test_*.py&quot;</span><span class="w"> </span>-v
-</pre></div>
-</div>
-<p>For a single test module:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>tests.unit.test_module
-</pre></div>
-</div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Run tests under a virtual environment session.</p>
 </div>
+<section id="example-tests">
+<h3>Example tests<a class="headerlink" href="#example-tests" title="Link to this heading">#</a></h3>
+<p>Create single-line example tests in docstring:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        **Examples**</span>
+
+<span class="sd">        &gt;&gt;&gt; add(1, 2)</span>
+<span class="sd">        3</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span>
+</pre></div>
+</div>
+<p>Test the module using <code class="docutils literal notranslate"><span class="pre">doctest</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>doctest<span class="w"> </span>-v<span class="w"> </span>/path/to/module.py
+</pre></div>
+</div>
+<p>Alternatively, test the module in the script part:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">doctest</span>
+    <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See more in <a class="reference external" href="https://docs.python.org/3/library/doctest.html">doctest library</a> for details on example tests.</p>
+</div>
+</section>
+<section id="unit-tests">
+<h3>Unit tests<a class="headerlink" href="#unit-tests" title="Link to this heading">#</a></h3>
+<p>Run all unit tests in <code class="docutils literal notranslate"><span class="pre">/tests</span></code> via terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>unittest<span class="w"> </span>discover<span class="w"> </span>-s<span class="w"> </span>tests<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;test_*.py&quot;</span><span class="w"> </span>-v
+</pre></div>
+</div>
+<p>For a single unit test module:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>tests.unit.test_module
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See more in <a class="reference external" href="https://docs.python.org/3/library/doctest.html">unittest library</a> for details on unit tests.</p>
+</div>
+<div class="highlight-note notranslate"><div class="highlight"><pre><span></span>Example tests can be included in unit tests with their own testing script.
+A template for this is provided in ``/tests/test_doctest.py``.
+</pre></div>
+</div>
+</section>
 <section id="benchmark-tests">
 <h3>Benchmark tests<a class="headerlink" href="#benchmark-tests" title="Link to this heading">#</a></h3>
-<p>Benchmark tests are related to full-integration of features, sometimes associated with input and output data. Some benchmark tests will install heavy datasets from provided URLs.</p>
+<p>Benchmark tests are unit tests related to full-integration of features, sometimes associated with input and output data. Some benchmark tests will install heavy datasets from provided URLs.</p>
 <section id="enable-benchmark-tests">
 <h4>Enable benchmark tests<a class="headerlink" href="#enable-benchmark-tests" title="Link to this heading">#</a></h4>
-<p>For running benchmark tests, they must be enabled manually. This is because benchmarks may take too long and deplete resources for CI services.</p>
+<p>For running benchmark tests, they must be enabled manually. This is because benchmarks may take too long and can deplete resources for CI services. Once enabled, just run the unit tests as usual.</p>
 <p>Enabling benchmarks on Unix:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">RUN_BENCHMARKS</span><span class="o">=</span><span class="m">1</span>
 </pre></div>
@@ -588,6 +630,8 @@ consistency.</p>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing">Testing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-tests">Example tests</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-tests">Unit tests</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmark-tests">Benchmark tests</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#enable-benchmark-tests">Enable benchmark tests</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#enable-large-benchmark-tests">Enable large benchmark tests</a></li>
