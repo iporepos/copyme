@@ -28,7 +28,7 @@ Installation
 
 .. develop installation instructions [CHANGE THIS]:
 
-For causal users, intall ``copyme`` to a Python 3 environment via terminal:
+For causal users, install ``copyme`` to a Python 3 environment via terminal:
 
 
 .. code-block:: console
