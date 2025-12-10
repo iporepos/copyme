@@ -70,6 +70,9 @@ extensions = [
     "sphinx_copybutton",  # install by `python -m pip install sphinx-copybutton`
     # -- converter for markdown files in docs
     "myst_parser",  # install by `python -m pip install myst-parser`
+    # -- miscellaneous features for sphinx, like tabs and cards
+    "sphinx_design",  # install by `python -m pip install sphinx-design`
+    # ... keep adding as new extensions are needed
 ]
 
 source_suffix = {
@@ -86,15 +89,22 @@ autodoc_mock_imports = [
 
 autodoc_member_order = "bysource"
 
-# Exclude the __dict__, __weakref__, and __module__ attributes from being documented
-exclude_members = ["__dict__", "__weakref__", "__module__", "__str__"]
+# Exclude dunder methods from being documented
+exclude_members = [
+    "__dict__",
+    "__weakref__",
+    "__module__",
+    "__str__",
+    # ... keep adding for more dunder methods
+]
+
 # Configure autodoc options
 autodoc_default_options = {
     "members": True,
     "undoc-members": False,
-    "private-members": True,
-    "special-members": True,
-    "show-inheritance": True,
+    "private-members": True,  # <-- [CHECK THIS] toggle False for hide
+    "special-members": True,  # <-- [CHECK THIS] toggle False for hide
+    "show-inheritance": True,  # <-- [CHECK THIS] toggle False for hide
     "exclude-members": ",".join(exclude_members),
 }
 
@@ -129,3 +139,14 @@ External (requires installation):
 """
 html_theme = "pydata_sphinx_theme"  # <-- [CHECK THIS] it might be not installed. use built-in 'classic' in case
 html_static_path = ["_static"]
+
+# set as light mode the default (recommended)
+html_context = {"default_mode": "light"}
+
+# [CHECK THIS] adding the logo to the header
+html_logo = "https://github.com/iporepos/copyme/blob/main/docs/figs/logo.png?raw=true"
+
+html_theme_options = {
+    "github_url": "https://github.com/iporepos/copyme",  # <-- [CHANGE THIS] set the actual url for the repo
+    "navbar_end": ["theme-switcher", "navbar-icon-links"],
+}

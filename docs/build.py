@@ -24,13 +24,22 @@ navigating to the build folder.
 
 Examples
 --------
-Update docs
 
-.. code-block:: bash
+.. dropdown:: Build in silent mode
+    :icon: code-square
+    :open:
 
-    python -m ./docs/docs_update.py
+    .. code-block:: bash
 
+        python -m docs.build
 
+.. dropdown:: Build and open website locally
+    :icon: code-square
+    :open:
+
+    .. code-block:: bash
+
+        python -m docs.build
 
 """
 
@@ -42,8 +51,9 @@ Update docs
 # =======================================================================
 import subprocess
 import webbrowser
-import glob
+import glob, os
 from pathlib import Path
+import argparse
 
 # External imports
 # =======================================================================
@@ -70,7 +80,7 @@ INDEX_FILE = BUILD_DIR / "index.html"
 
 # FUNCTIONS -- Project-level
 # =======================================================================
-def build_docs():
+def build_docs(open_site=False):
     """
     Build Sphinx documentation and open the index.html file.
 
@@ -86,8 +96,9 @@ def build_docs():
     )
 
     # Open the generated index.html in the default web browser
-    webbrowser.open(INDEX_FILE.resolve().as_uri())
-    print(f"Documentation built successfully! Opened {INDEX_FILE}")
+    if open_site:
+        webbrowser.open(INDEX_FILE.resolve().as_uri())
+    print(f"Documentation built successfully! Open {INDEX_FILE}")
 
 
 # FUNCTIONS -- Module-level
@@ -114,6 +125,20 @@ def delete_generated():
 # ***********************************************************************
 if __name__ == "__main__":
 
-    # Script section
-    # ===================================================================
-    build_docs()
+    # Handle parsing
+    # ------------------------------------------------------------------
+    parser = argparse.ArgumentParser(description="Build Sphinx HTML documentation.")
+
+    parser.add_argument(
+        "--open",
+        "-o",
+        action="store_true",
+        default=False,
+        help="Open index.html in the default browser after building.",
+    )
+
+    args = parser.parse_args()
+
+    # Call the builder
+    # ------------------------------------------------------------------
+    build_docs(open_site=args.open)
