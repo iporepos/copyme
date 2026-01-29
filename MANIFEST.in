@@ -18,6 +18,11 @@ include README.md
 # [CHECK THIS] Include LICENSE
 include LICENSE       
 
+# DATA FILES
+# =======================================================================
+# [CHECK THIS] Include data folders
+recursive-include src/*/data *
+
 # OTHER RESOURCES
 # =======================================================================
 # [CHECK THIS] Include docs folder
