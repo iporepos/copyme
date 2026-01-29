@@ -127,7 +127,7 @@ dependencies = [
 # install with `pip install -e ".[dev]"`
 
 dev = [
-    "black",           # [EXAMPLE] [RECOMMENDED] Code style lib
+    "black==25.12.0",  # [EXAMPLE] [RECOMMENDED] Code style lib
     "notebook",        # [EXAMPLE] [RECOMMENDED] Useful for testing and learning
     # "pytest>=8.0",   # [EXAMPLE] testing framework
     # ... [ADD MORE IF NEDDED]
