@@ -41,8 +41,8 @@
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="_static/documentation_options.js?v=d45e8c67"></script>
-    <script src="_static/doctools.js?v=9bcbadda"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
@@ -414,8 +414,8 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <span class="target" id="development"></span><section id="development">
-<h1>Development<a class="headerlink" href="#development" title="Link to this heading">#</a></h1>
+  <span class="target" id="development"></span><section id="id1">
+<h1>Development<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <p>This section provides guidance for those who wish to contribute to the project.
 It includes instructions for setting up the development environment, cloning the repository, installing the project in development mode, running tests, and building the documentation.</p>
 <p>To ensure that new features and changes adhere to project standards, maintain quality, and keep the documentation up to date, contributors are required to follow:</p>
@@ -449,7 +449,7 @@ other projects.</p>
 <p>Of course, you need Python installed in your system</p>
 </div>
 <p>Move to the repo root folder:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># [CHANGE THIS] set your own actual local path</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># [CHANGE THIS] set your own actual local path </span>
 <span class="nb">cd</span><span class="w"> </span>./path/to/<span class="o">{</span>thislib<span class="o">}</span>
 </pre></div>
 </div>
@@ -473,6 +473,74 @@ dependencies in editable mode <code class="docutils literal notranslate"><span c
 </div>
 <p>This will install all dependecies needed both for
 developing and documentation.</p>
+</section>
+<hr class="docutils" />
+<section id="versions">
+<h2>Versions<a class="headerlink" href="#versions" title="Link to this heading">#</a></h2>
+</section>
+<section id="semantic-versioning-policy">
+<h2>Semantic Versioning Policy<a class="headerlink" href="#semantic-versioning-policy" title="Link to this heading">#</a></h2>
+<p>This project follows Semantic Versioning (<code class="docutils literal notranslate"><span class="pre">MAJOR.MINOR.PATCH</span></code>) with the interpretations below.</p>
+<section id="major-x-y-z-project-maturity-level">
+<h3>Major <code class="docutils literal notranslate"><span class="pre">X.y.z</span></code> — Project Maturity Level<a class="headerlink" href="#major-x-y-z-project-maturity-level" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>0.x.x — Experimental</strong></p>
+<ul>
+<li><p>Playground for exploring architecture and project layout.</p></li>
+<li><p>Breaking changes are expected.</p></li>
+</ul>
+</li>
+<li><p><strong>1.x.x — Stable Foundation</strong></p>
+<ul>
+<li><p>Production-ready core architecture.</p></li>
+<li><p>Actively developed.</p></li>
+<li><p>Backward compatibility is expected.</p></li>
+</ul>
+</li>
+<li><p><strong>2.x.x — Next Generation</strong></p>
+<ul>
+<li><p>May introduce new syntax or paradigms.</p></li>
+<li><p>Can be incompatible with <code class="docutils literal notranslate"><span class="pre">1.x.x</span></code>.</p></li>
+<li><p>More mature, better documented, and more stable.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="minor-x-y-z-milestones">
+<h3>Minor <code class="docutils literal notranslate"><span class="pre">x.Y.z</span></code> — Milestones<a class="headerlink" href="#minor-x-y-z-milestones" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Major feature additions.</p></li>
+<li><p>Large refactors within the same architecture.</p></li>
+<li><p>Treated as logical restore points.</p></li>
+</ul>
+</section>
+<section id="patch-x-y-z-maintenance">
+<h3>Patch <code class="docutils literal notranslate"><span class="pre">x.y.Z</span></code> — Maintenance<a class="headerlink" href="#patch-x-y-z-maintenance" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Bug fixes.</p></li>
+<li><p>Small improvements.</p></li>
+<li><p>Documentation corrections.</p></li>
+<li><p>No behavioral changes.</p></li>
+</ul>
+</section>
+</section>
+<section id="version-names">
+<h2>Version Names<a class="headerlink" href="#version-names" title="Link to this heading">#</a></h2>
+<p>Releases may receive human-readable names. Recommended pattern:</p>
+<ul class="simple">
+<li><p><strong>Major version → Theme</strong></p></li>
+<li><p><strong>Minor version → Theme and item inside that theme</strong></p></li>
+</ul>
+<p>Example: Mesopotamia CITY — RULER</p>
+<ul class="simple">
+<li><p>0.1.0 — Uruk Enmerkar</p></li>
+<li><p>0.2.0 — Uruk Gilgamesh</p></li>
+<li><p>1.0.0 — Babylon Hammurabi</p></li>
+<li><p>1.1.0 — Babylon Samsu-iluna</p></li>
+<li><p>1.2.0 — Babylon Abi-Eshuh</p></li>
+<li><p>2.0.0 — Nineveh Sennacherib</p></li>
+<li><p>2.1.0 — Nineveh Esarhaddon</p></li>
+</ul>
 </section>
 <hr class="docutils" />
 <section id="style">
@@ -535,15 +603,15 @@ consistency.</p>
 <h3>Example tests<a class="headerlink" href="#example-tests" title="Link to this heading">#</a></h3>
 <p>Create single-line example tests in docstring:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-
-<span class="sd">        **Examples**</span>
-
-<span class="sd">        &gt;&gt;&gt; add(1, 2)</span>
-<span class="sd">        3</span>
-
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span>
+<span class="w">	</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	</span>
+<span class="sd">	**Examples**</span>
+<span class="sd">	</span>
+<span class="sd">	&gt;&gt;&gt; add(1, 2)</span>
+<span class="sd">	3</span>
+<span class="sd">		</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">return</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span>
 </pre></div>
 </div>
 <p>Test the module using <code class="docutils literal notranslate"><span class="pre">doctest</span></code>:</p>
@@ -661,6 +729,14 @@ A template for this is provided in <code class="docutils literal notranslate"><s
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cloning">Cloning</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing">Installing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#versions">Versions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#semantic-versioning-policy">Semantic Versioning Policy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#major-x-y-z-project-maturity-level">Major <code class="docutils literal notranslate"><span class="pre">X.y.z</span></code> — Project Maturity Level</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minor-x-y-z-milestones">Minor <code class="docutils literal notranslate"><span class="pre">x.Y.z</span></code> — Milestones</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#patch-x-y-z-maintenance">Patch <code class="docutils literal notranslate"><span class="pre">x.y.Z</span></code> — Maintenance</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-names">Version Names</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#style">Style</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-locally">Build locally</a></li>
@@ -722,7 +798,7 @@ A template for this is provided in <code class="docutils literal notranslate"><s
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.0.4.
     <br/>
   </p>
 </div>

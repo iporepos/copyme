@@ -1,0 +1,12 @@
+{
+    "about": 0.03,
+    "api": 0.009,
+    "development": 0.024,
+    "dummy": 0.003,
+    "generated/copyme": 0.024,
+    "generated/copyme.module": 0.094,
+    "generated/copyme.mypackage": 0.002,
+    "generated/copyme.mypackage.submodule": 0.016,
+    "index": 0.003,
+    "usage": 0.007
+}
