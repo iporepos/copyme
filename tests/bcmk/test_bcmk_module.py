@@ -193,7 +193,7 @@ class BenchmarkTemplateTests(unittest.TestCase):
 
         # Example assertions: basic validation of output
         self.assertIsNotNone(results)
-        self.assertTrue((self.output_path / "summary.csv").exists())
+        self.assertTrue((self.output_path / "simulation.csv").exists())
 
     # Tear down methods
     # -------------------------------------------------------------------
