@@ -477,12 +477,11 @@ developing and documentation.</p>
 <hr class="docutils" />
 <section id="versions">
 <h2>Versions<a class="headerlink" href="#versions" title="Link to this heading">#</a></h2>
-</section>
 <section id="semantic-versioning-policy">
-<h2>Semantic Versioning Policy<a class="headerlink" href="#semantic-versioning-policy" title="Link to this heading">#</a></h2>
+<h3>Semantic Versioning Policy<a class="headerlink" href="#semantic-versioning-policy" title="Link to this heading">#</a></h3>
 <p>This project follows Semantic Versioning (<code class="docutils literal notranslate"><span class="pre">MAJOR.MINOR.PATCH</span></code>) with the interpretations below.</p>
 <section id="major-x-y-z-project-maturity-level">
-<h3>Major <code class="docutils literal notranslate"><span class="pre">X.y.z</span></code> — Project Maturity Level<a class="headerlink" href="#major-x-y-z-project-maturity-level" title="Link to this heading">#</a></h3>
+<h4>Major <code class="docutils literal notranslate"><span class="pre">X.y.z</span></code> — Project Maturity Level<a class="headerlink" href="#major-x-y-z-project-maturity-level" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p><strong>0.x.x — Experimental</strong></p>
 <ul>
@@ -507,7 +506,7 @@ developing and documentation.</p>
 </ul>
 </section>
 <section id="minor-x-y-z-milestones">
-<h3>Minor <code class="docutils literal notranslate"><span class="pre">x.Y.z</span></code> — Milestones<a class="headerlink" href="#minor-x-y-z-milestones" title="Link to this heading">#</a></h3>
+<h4>Minor <code class="docutils literal notranslate"><span class="pre">x.Y.z</span></code> — Milestones<a class="headerlink" href="#minor-x-y-z-milestones" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Major feature additions.</p></li>
 <li><p>Large refactors within the same architecture.</p></li>
@@ -515,7 +514,7 @@ developing and documentation.</p>
 </ul>
 </section>
 <section id="patch-x-y-z-maintenance">
-<h3>Patch <code class="docutils literal notranslate"><span class="pre">x.y.Z</span></code> — Maintenance<a class="headerlink" href="#patch-x-y-z-maintenance" title="Link to this heading">#</a></h3>
+<h4>Patch <code class="docutils literal notranslate"><span class="pre">x.y.Z</span></code> — Maintenance<a class="headerlink" href="#patch-x-y-z-maintenance" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Bug fixes.</p></li>
 <li><p>Small improvements.</p></li>
@@ -525,7 +524,7 @@ developing and documentation.</p>
 </section>
 </section>
 <section id="version-names">
-<h2>Version Names<a class="headerlink" href="#version-names" title="Link to this heading">#</a></h2>
+<h3>Version Names<a class="headerlink" href="#version-names" title="Link to this heading">#</a></h3>
 <p>Releases may receive human-readable names. Recommended pattern:</p>
 <ul class="simple">
 <li><p><strong>Major version → Theme</strong></p></li>
@@ -541,6 +540,7 @@ developing and documentation.</p>
 <li><p>2.0.0 — Nineveh Sennacherib</p></li>
 <li><p>2.1.0 — Nineveh Esarhaddon</p></li>
 </ul>
+</section>
 </section>
 <hr class="docutils" />
 <section id="style">
@@ -591,14 +591,74 @@ consistency.</p>
 <h2>Testing<a class="headerlink" href="#testing" title="Link to this heading">#</a></h2>
 <p>Test-driven development is recommended. Tests are split into the following categories:</p>
 <ul class="simple">
-<li><p><strong>Example tests</strong> - single line tests presented in docstrings.</p></li>
 <li><p><strong>Unit tests</strong> - short and targeting feature behavior.</p></li>
 <li><p><strong>Benchmark tests</strong> - may take longer time, targeting full performance, includes inputs and outputs evaluations.</p></li>
+<li><p><strong>Example tests</strong> - single line tests presented in docstrings.</p></li>
 </ul>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Run tests under a virtual environment session.</p>
 </div>
+<section id="unit-tests">
+<h3>Unit tests<a class="headerlink" href="#unit-tests" title="Link to this heading">#</a></h3>
+<p>Run all unit tests in <code class="docutils literal notranslate"><span class="pre">/tests</span></code> via terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>unittest<span class="w"> </span>discover<span class="w"> </span>-s<span class="w"> </span>tests<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;test_*.py&quot;</span><span class="w"> </span>-v
+</pre></div>
+</div>
+<p>For a single unit test module:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>tests.unit.test_module
+</pre></div>
+</div>
+<p>Alternatively, consider run the utility available in the repository:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>tests.run<span class="w"> </span>--which<span class="w"> </span><span class="s2">&quot;unit&quot;</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See more in <a class="reference external" href="https://docs.python.org/3/library/doctest.html">unittest library</a> for details on unit tests.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Example tests can be included in unit tests with their own testing script.
+A template for this is provided in <code class="docutils literal notranslate"><span class="pre">/tests/test_doctest.py</span></code>.</p>
+</div>
+</section>
+<section id="benchmark-tests">
+<h3>Benchmark tests<a class="headerlink" href="#benchmark-tests" title="Link to this heading">#</a></h3>
+<p>Benchmark tests are unit tests related to full-integration of features,
+sometimes associated with input and output data. Some benchmark tests
+will install heavy datasets from provided URLs.</p>
+<p>For convenience, consider run the utility available in the repository:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>tests.run<span class="w"> </span>--which<span class="w"> </span><span class="s2">&quot;bcmk&quot;</span>
+</pre></div>
+</div>
+<section id="enable-benchmark-tests">
+<h4>Enable benchmark tests<a class="headerlink" href="#enable-benchmark-tests" title="Link to this heading">#</a></h4>
+<p>For running benchmark tests, they must be enabled manually. This is
+because benchmarks may take too long and can deplete resources for CI services.
+Once enabled, just run the unit tests as usual.</p>
+<p>Enabling benchmarks on Unix:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">RUN_BENCHMARKS</span><span class="o">=</span><span class="m">1</span>
+</pre></div>
+</div>
+<p>Enabling benchmarks on Windows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$env</span>:RUN_BENCHMARKS<span class="o">=</span><span class="s2">&quot;1&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="enable-large-benchmark-tests">
+<h4>Enable large benchmark tests<a class="headerlink" href="#enable-large-benchmark-tests" title="Link to this heading">#</a></h4>
+<p>Large benchmark tests are exceptionally large tests. The same logic applies:</p>
+<p>Enabling large benchmark tests on Unix:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">RUN_BENCHMARKS_XXL</span><span class="o">=</span><span class="m">1</span>
+</pre></div>
+</div>
+<p>Enabling large benchmark tests on Windows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$env</span>:RUN_BENCHMARKS_XXL<span class="o">=</span><span class="s2">&quot;1&quot;</span>
+</pre></div>
+</div>
+</section>
+</section>
 <section id="example-tests">
 <h3>Example tests<a class="headerlink" href="#example-tests" title="Link to this heading">#</a></h3>
 <p>Create single-line example tests in docstring:</p>
@@ -628,54 +688,6 @@ consistency.</p>
 <p class="admonition-title">See also</p>
 <p>See more in <a class="reference external" href="https://docs.python.org/3/library/doctest.html">doctest library</a> for details on example tests.</p>
 </div>
-</section>
-<section id="unit-tests">
-<h3>Unit tests<a class="headerlink" href="#unit-tests" title="Link to this heading">#</a></h3>
-<p>Run all unit tests in <code class="docutils literal notranslate"><span class="pre">/tests</span></code> via terminal:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>unittest<span class="w"> </span>discover<span class="w"> </span>-s<span class="w"> </span>tests<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;test_*.py&quot;</span><span class="w"> </span>-v
-</pre></div>
-</div>
-<p>For a single unit test module:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>tests.unit.test_module
-</pre></div>
-</div>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p>See more in <a class="reference external" href="https://docs.python.org/3/library/doctest.html">unittest library</a> for details on unit tests.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Example tests can be included in unit tests with their own testing script.
-A template for this is provided in <code class="docutils literal notranslate"><span class="pre">/tests/test_doctest.py</span></code>.</p>
-</div>
-</section>
-<section id="benchmark-tests">
-<h3>Benchmark tests<a class="headerlink" href="#benchmark-tests" title="Link to this heading">#</a></h3>
-<p>Benchmark tests are unit tests related to full-integration of features, sometimes associated with input and output data. Some benchmark tests will install heavy datasets from provided URLs.</p>
-<section id="enable-benchmark-tests">
-<h4>Enable benchmark tests<a class="headerlink" href="#enable-benchmark-tests" title="Link to this heading">#</a></h4>
-<p>For running benchmark tests, they must be enabled manually. This is because benchmarks may take too long and can deplete resources for CI services. Once enabled, just run the unit tests as usual.</p>
-<p>Enabling benchmarks on Unix:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">RUN_BENCHMARKS</span><span class="o">=</span><span class="m">1</span>
-</pre></div>
-</div>
-<p>Enabling benchmarks on Windows:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$env</span>:RUN_BENCHMARKS<span class="o">=</span><span class="s2">&quot;1&quot;</span>
-</pre></div>
-</div>
-</section>
-<section id="enable-large-benchmark-tests">
-<h4>Enable large benchmark tests<a class="headerlink" href="#enable-large-benchmark-tests" title="Link to this heading">#</a></h4>
-<p>Large benchmark tests are exceptionally large tests. The same logic applies:</p>
-<p>Enabling large benchmark tests on Unix:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">RUN_BENCHMARKS_XXL</span><span class="o">=</span><span class="m">1</span>
-</pre></div>
-</div>
-<p>Enabling large benchmark tests on Windows:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$env</span>:RUN_BENCHMARKS_XXL<span class="o">=</span><span class="s2">&quot;1&quot;</span>
-</pre></div>
-</div>
-</section>
 </section>
 </section>
 </section>
@@ -729,27 +741,29 @@ A template for this is provided in <code class="docutils literal notranslate"><s
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cloning">Cloning</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing">Installing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#versions">Versions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#semantic-versioning-policy">Semantic Versioning Policy</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#major-x-y-z-project-maturity-level">Major <code class="docutils literal notranslate"><span class="pre">X.y.z</span></code> — Project Maturity Level</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minor-x-y-z-milestones">Minor <code class="docutils literal notranslate"><span class="pre">x.Y.z</span></code> — Milestones</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#patch-x-y-z-maintenance">Patch <code class="docutils literal notranslate"><span class="pre">x.y.Z</span></code> — Maintenance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#versions">Versions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#semantic-versioning-policy">Semantic Versioning Policy</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#major-x-y-z-project-maturity-level">Major <code class="docutils literal notranslate"><span class="pre">X.y.z</span></code> — Project Maturity Level</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#minor-x-y-z-milestones">Minor <code class="docutils literal notranslate"><span class="pre">x.Y.z</span></code> — Milestones</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#patch-x-y-z-maintenance">Patch <code class="docutils literal notranslate"><span class="pre">x.y.Z</span></code> — Maintenance</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-names">Version Names</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#version-names">Version Names</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#style">Style</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-locally">Build locally</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing">Testing</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-tests">Example tests</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-tests">Unit tests</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmark-tests">Benchmark tests</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#enable-benchmark-tests">Enable benchmark tests</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#enable-large-benchmark-tests">Enable large benchmark tests</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-tests">Example tests</a></li>
 </ul>
 </li>
 </ul>
