@@ -19,11 +19,14 @@
 # 'requires' lists the packages that are needed to build your project
 # These are only needed at build time, not when running your package
 # Default values are fine for most projects
+
 requires = [
-    "setuptools>=65.0",  # Standard Python packaging tool
-    "wheel"              # Required to build wheel distributions (.whl)
+    "setuptools>=68.0",     # Standard Python packaging tool
+    "setuptools-scm>=8.0",  # Helper dependency for version management
+    "wheel"                 # Required to build wheel distributions (.whl)
     # ... [ADD MORE IF NEDDED]
 ]
+
 
 # 'build-backend' tells pip or other tools which system to use to build your project
 # setuptools.build_meta is the default and works for almost all projects
@@ -46,7 +49,8 @@ build-backend = "setuptools.build_meta"
 # The name of your package/project
 name = "copyme"          # <-- [CHANGE THIS] set with your project name
 # Version number
-version = "0.1.1"        # <-- [CHANGE THIS] Set version
+##  version = "0.1.1"    # <-- [CHANGE THIS] Set version
+dynamic = ["version"]    # used for automated versioning
 # Short description
 description = "A simple template for python development."   # <-- [CHANGE THIS]
 # Keywords (optional) for search on PyPI
@@ -172,3 +176,8 @@ include-package-data = true
 
 [tool.setuptools.package-data]
 "*" = ["data/**/*"]
+
+[tool.setuptools_scm]
+version_scheme = "no-guess-dev"
+local_scheme = "no-local-version"
+fallback_version = "0.0.0"
