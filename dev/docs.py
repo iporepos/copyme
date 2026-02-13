@@ -31,7 +31,7 @@ Examples
 
     .. code-block:: bash
 
-        python -m docs.build
+        python -m dev.docs
 
 .. dropdown:: Build and open website locally
     :icon: code-square
@@ -39,7 +39,8 @@ Examples
 
     .. code-block:: bash
 
-        python -m docs.build
+        python -m dev.docs --open
+
 
 """
 

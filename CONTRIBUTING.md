@@ -47,19 +47,19 @@ python -m pip install -e .[dev,docs]
 8. Apply style:
 
 ```bash
-black .
+python -m dev.style
 ```
 
-9. Build docs (locally_:
+9. Build docs (locally):
 
 ```bash
-python -m docs.build --open
+python -m dev.docs --open
 ```
 
 10. If previous passed, run all CI-based tests:
 
 ```bash
-python -m tests.run
+python -m dev.tests
 ```
 
 12. If previous step passed, stage and commit;
@@ -92,7 +92,7 @@ Alternatively, clone via terminal:
 git clone https://github.com/{username}/{repository}.git
 ``` 
 
-## Installing
+## Installing as a developer
 
 For developing, it's recommended to set up a python
 **Virtual Environment** (`venv`) locally for developing the repo.
@@ -255,13 +255,13 @@ black .
 ```
 > from the repo root, under the venv session
 
-```{warning}
-Unformatted contributions are not going to pass because GitHub checks for style 
-consistency.
+The built-in wrapper is:
+```bash
+python -m dev.style
 ```
 
-```{seealso}
-There are tools for automating `black` before commit. See [https://pre-commit.com/](https://pre-commit.com/)
+```{warning}
+Unformatted contributions are not going to pass because GitHub checks for style consistency.
 ```
 
 ---
@@ -278,10 +278,10 @@ Use Sphinx for building the documentation website locally. Run this via terminal
 sphinx-build -b html .\docs .\docs\_build --write-all
 ```
 
-For automating tasks before and after building, consider run:
+The built-in wrapper is:
 
 ```bash
-python -m docs.build --open
+python -m dev.docs --open
 ```
 
 ```{important}
@@ -291,7 +291,6 @@ Build documentation under a virtual environment session.
 ```{note}
 The docs website is generated under ``docs/_build``
 ```
-
 
 ## Testing
 
@@ -319,10 +318,24 @@ For a single unit test module:
 python -m tests.unit.test_module
 ```
 
-Alternatively, consider run the utility available in the repository:
+The built-in wrapper is:
 
 ```bash
-python -m tests.run --which "unit"
+python -m dev.tests
+```
+Variations include:
+
+```bash
+python -m dev.tests --which "unit"
+```
+For benchmarks (run this locally)
+```bash
+python -m dev.tests --which "bcmk"
+```
+For all tests:
+For benchmarks (run this locally)
+```bash
+python -m dev.tests --all
 ```
 
 ```{seealso}
@@ -340,15 +353,9 @@ Benchmark tests are unit tests related to full-integration of features,
 sometimes associated with input and output data. Some benchmark tests 
 will install heavy datasets from provided URLs.
 
-For convenience, consider run the utility available in the repository:
-
-```bash
-python -m tests.run --which "bcmk"
-```
-
 #### Enable benchmark tests
 
-For running benchmark tests, they must be enabled manually. This is 
+For running benchmark tests, they must be enabled. This is 
 because benchmarks may take too long and can deplete resources for CI services. 
 Once enabled, just run the unit tests as usual.
 

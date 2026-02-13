@@ -3,7 +3,10 @@
 # Copyright (C) 2025 The Project Authors
 # See pyproject.toml for authors/maintainers.
 # See LICENSE for license details.
+"""
+todo: docstring
 
+"""
 # IMPORTS
 # ***********************************************************************
 
@@ -69,21 +72,35 @@ def user_input(message="Enter input"):
     return s_inp
 
 
-def black_all():
+def run_style():
+    print("\n")
+    print(50 * "=")
+    print("Black style")
     subprocess.run(["black", "."])
+    return None
 
 
 def build_docs():
-    subprocess.run([sys.executable, "-m", "docs.build"])
+    print("\n")
+    print(50 * "=")
+    print("Sphinx docs")
+    subprocess.run([sys.executable, "-m", "dev.docs"])
     time.sleep(3)
+    return None
 
 
 def run_tests():
-    subprocess.run([sys.executable, "-m", "tests.run"])
+    print("\n")
+    print(50 * "=")
+    print("Unit tests")
+
+    subprocess.run([sys.executable, "-m", "dev.tests"])
+
     time.sleep(3)
+    return None
 
 
-def git_commit():
+def handle_commit():
     while True:
         print("\n")
         print(50 * "-")
@@ -106,7 +123,7 @@ def git_commit():
             break
 
 
-def git_tag():
+def handle_tag():
 
     while True:
         print("\n")
@@ -142,7 +159,7 @@ def git_tag():
             continue
 
 
-def git_push():
+def handle_push():
     while True:
         print("\n")
         print(50 * "-")
@@ -190,24 +207,15 @@ def main():
 
         s = fork("Build Docs and Run Tests?", "exit", False)
         if s == "y":
-            print("\n")
-            print(50 * "=")
-            print("Sphinx docs")
-            build_docs()
 
-            print("\n")
-            print(50 * "=")
-            print("Unit tests")
+            build_docs()
             run_tests()
 
         elif s == "exit":
             exiting()
             break
 
-        print("\n")
-        print(50 * "=")
-        print("Black style")
-        black_all()
+        run_style()
 
         print("\n")
         print(50 * "=")
@@ -231,9 +239,9 @@ def main():
 
         elif s == "y":
             subprocess.run(["git", "add", "."])
-            git_commit()
-            git_tag()
-            git_push()
+            handle_commit()
+            handle_tag()
+            handle_push()
 
         elif s == "n":
             continue
@@ -243,10 +251,8 @@ def main():
             continue
 
 
+# SCRIPT
+# ***********************************************************************
 if __name__ == "__main__":
-
-    print("Hello world!")
-
-    # subprocess.run(["git", "tag"])
 
     main()

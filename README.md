@@ -79,43 +79,21 @@ This layout is known as `src` layout, since it stores the source code under a `s
 ├── .gitignore                    # [CHECK THIS] configuration of git vcs ignoring system
 ├── pyproject.toml                # [CHECK THIS] configuration of python project
 ├── MANIFEST.in                   # [CHECK THIS] configuration of source distribution
-│
-├── .venv/                        # [ignored] virtual environment
-│
+|
 ├── .github/                      # github folder
 │    └── workflows/               # folder for continuous integration services
 │         ├── style.py            # [CHECK THIS] configuration file for style check workflow
 │         ├── tests.py            # [CHECK THIS] configuration file for tests workflow
 │         └── docs.yml            # [CHECK THIS] configuration file for docs build workflow
 │
-├── src/                          # source code folder
-│    ├── {repository}.egg-info          # [ignored] [generated] files for local development
-│    └── {repository}/                  # [CHANGE THIS] source code root
-│         ├── __init__.py         # template init file
-│         ├── module.py           # template module
-│         ├── ...                 # develop your modules
-│         ├── mypackage/          # template package
-│         │    └── submodule.py
-│         └── data/               # run-time data
-│              └── src_data.txt   # dummy data file
-│
-├── tests/                        # testing code folder
-│    ├── run.py                   # test master script
-│    ├── conftest.py              # [CHECK THIS] configuration file of tests
-│    ├──unit/                     # unit tests package     
-│    │    ├── __init__.py
-│    │    └── test_module.py      # template module for unit tests
-│    ├── bcmk/                    # benchmarking tests package
-│    │    ├── __init__.py               
-│    │    └── test_bcmk.py        # template module for benchmarking tests
-│    ├── data/                    # test-only data
-│    │     ├── test_data.csv
-│    │     ├── datasets.csv       # table of remote datasets
-│    │     └── dataset1/          # [ignored] subfolders in data
-│    └── outputs/                 # [ignored] tests outputs
+├── dev/                          # development folder
+│    ├── checkout.py              # checkout script
+│    ├── docs.py                  # build docs script
+│    ├── style.py                 # style script
+│    ├── tests.py                 # testing script
+│    └── templates-ci/            # templates for CI
 │
 ├── docs/                         # documentation folder
-│    ├── build.py                 # docs master script
 │    ├── about.rst                # info about the repo
 │    ├── api.rst                  # api reference using sphinx autodoc
 │    ├── conf.py                  # [CHECK THIS] configuration file for sphinx
@@ -124,19 +102,40 @@ This layout is known as `src` layout, since it stores the source code under a `s
 │    ├── usage.rst                # instructions for using this repo
 │    ├── make.bat                 # (optional) [generated] sphinx auxiliar file 
 │    ├── Makefile                 # (optional) [generated] sphinx auxiliar file 
-│    ├── figs/                    # figs-only files
-│    │    ├── logo.png
-│    │    ├── logo.svg
-│    │    └── fig1.png               
+│    ├── figs/                    # figs-only files         
 │    ├── data/                    # docs-only data
-│    │    └── docs.txt            # dummy data file
 │    ├── generated/               # [generated] sphinx created files 
 │    ├── _templates/              # [ignored] [generated] sphinx created stuff
 │    ├── _static/                 # [generated] sphinx created stuff
 │    └── _build/                  # [ignored] [generated] sphinx build
 │
-└── examples/                     # (optional) learning resources 
-     ├── examples_01.ipynb    
-     └── examples_02.ipynb            
+├── src/                          # source code folder
+│    ├── {repository}.egg-info    # [ignored] [generated] files for local development
+│    └── {repository}/            # [CHANGE THIS] source code root
+│         ├── __init__.py         # template init file
+│         ├── module.py           # template module
+│         ├── ...                 # develop your modules
+│         ├── mypackage/          # template package
+│         │    └── submodule.py
+│         └── data/               # run-time data
+│
+├── examples/                     # (optional) learning resources 
+│    ├── examples_01.ipynb    
+│    └── examples_02.ipynb            
+│
+├── tests/                        # testing code folder
+│    ├── conftest.py              # [CHECK THIS] configuration file of tests
+│    ├──unit/                     # unit tests package     
+│    │    └── test_module.py      # template module for unit tests
+│    ├── bcmk/                    # benchmarking tests package
+│    │    └── test_bcmk.py        # template module for benchmarking tests
+│    ├── data/                    # test-only data
+│    │     ├── test_data.csv
+│    │     ├── datasets.csv       # table of remote datasets
+│    │     └── dataset1/          # [ignored] subfolders in data
+│    └── outputs/                 # [ignored] tests outputs
+
+│
+
 
 ```
