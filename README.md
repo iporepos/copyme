@@ -1,3 +1,4 @@
+![Dist Status](https://github.com/iporepos/copyme/actions/workflows/dist.yaml/badge.svg)
 ![Style Status](https://github.com/iporepos/copyme/actions/workflows/style.yaml/badge.svg)
 ![Docs Status](https://github.com/iporepos/copyme/actions/workflows/docs.yaml/badge.svg)
 ![Tests Status](https://github.com/iporepos/copyme/actions/workflows/tests.yaml/badge.svg)
