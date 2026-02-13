@@ -418,7 +418,9 @@
 <span id="id1"></span><h1>Usage<a class="headerlink" href="#usage" title="Link to this heading">#</a></h1>
 <section id="overview">
 <span id="quickview"></span><h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
-<p>For casual users, the installation instructions allow quick setup and testing of basic functionality. Additional resources, including example Jupyter notebooks and live interactive versions, are available to explore features and usage patterns in detail.</p>
+<p>For casual users, the installation instructions allow quick setup and testing of
+basic functionality. Additional resources, including example Jupyter notebooks
+and live interactive versions, are available to explore features and usage patterns in detail.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p>For those who want to contribute, see <a class="reference internal" href="development.html#development"><span class="std std-ref">Development</span></a></p>
@@ -426,10 +428,35 @@
 </section>
 <section id="installation">
 <span id="id2"></span><h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
-<p>For causal users, install <code class="docutils literal notranslate"><span class="pre">copyme</span></code> to a Python 3 environment via terminal:</p>
+<section id="install-as-a-python-package">
+<h3>Install as a Python package<a class="headerlink" href="#install-as-a-python-package" title="Link to this heading">#</a></h3>
+<p>For Python regular users, install the latest package deploy
+to a Python 3 environment via pip:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python -m pip install copyme</span>
+</pre></div>
+</div>
+<p>Or any desired branch or version via github url:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python -m pip install git+https://github.com/iporepos/copyme.git@main</span>
 </pre></div>
 </div>
+</section>
+<section id="install-in-windows-11">
+<h3>Install in Windows 11<a class="headerlink" href="#install-in-windows-11" title="Link to this heading">#</a></h3>
+<p>For users seeking only the tool experience in Windows 11:</p>
+<ol class="arabic simple">
+<li><p>Make sure the latest Python 3 is installed and added to PATH: <a class="reference external" href="https://www.python.org">https://www.python.org</a></p></li>
+<li><p>Download the installer PowerShell file <code class="docutils literal notranslate"><span class="pre">install-copyme.ps1</span></code> from the GitHub repository;</p></li>
+<li><p>Right-click the installer file and click the option <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">with</span> <span class="pre">PowerShell</span></code>;</p></li>
+<li><p>Follow the instructions prompted until the end;</p></li>
+</ol>
+<p>Comments:</p>
+<p>The app will live in <code class="docutils literal notranslate"><span class="pre">C:\Users\{You}\AppData\Local\copyme</span></code>.</p>
+<p>To check if the app is alive, open <code class="docutils literal notranslate"><span class="pre">PowerShell</span></code> and type:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">copyme check</span>
+</pre></div>
+</div>
+<p>The output should result in no error or warning.</p>
+</section>
 </section>
 <section id="guides">
 <span id="id3"></span><h2>Guides<a class="headerlink" href="#guides" title="Link to this heading">#</a></h2>
@@ -507,7 +534,11 @@
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-as-a-python-package">Install as a Python package</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-in-windows-11">Install in Windows 11</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guides">Guides</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-basic-script">A basic script</a></li>
