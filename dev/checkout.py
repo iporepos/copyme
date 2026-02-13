@@ -10,6 +10,7 @@
 # Native imports
 # =======================================================================
 import subprocess
+import sys
 import time
 
 
@@ -72,14 +73,34 @@ def black_all():
     subprocess.run(["black", "."])
 
 
+def build_docs():
+    subprocess.run([sys.executable, "-m", "docs.build"])
+    time.sleep(3)
+
+
+def run_tests():
+    subprocess.run([sys.executable, "-m", "tests.run"])
+    time.sleep(3)
+
+
 def main():
 
     while True:
         subprocess.run(["clear"])
 
+        build_docs()
+
+        run_tests()
+
         print("\n")
         print(50 * "=")
+        print("Black style")
         black_all()
+
+        print("\n")
+        print(50 * "=")
+        print("Tags")
+        subprocess.run(["git", "tag"])
 
         print("\n")
         print(50 * "=")
@@ -133,7 +154,6 @@ def git_tag():
         print("\n")
         print(50 * "-")
         print("Current tags:")
-
         subprocess.run(["git", "tag"])
 
         s = fork(message="Enter new tag?", exit_option=None, clear_option=False)
