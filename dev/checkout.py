@@ -128,20 +128,29 @@ def git_commit():
 
 
 def git_tag():
+
     while True:
         print("\n")
         print(50 * "-")
         print("Current tags:")
+
         subprocess.run(["git", "tag"])
+
         s = fork(message="Enter new tag?", exit_option=None, clear_option=False)
+
         if s == "y":
-            s_msg = "Enter new tag"
+            s_msg = "Enter new tag in vX.Y.Z format"
             stag = user_input(s_msg)
+
             if stag is None:
                 print(" >>> Tagging cancelled.")
                 time.sleep(1)
+
             else:
                 print(" >>> develop code")
+                # git tag -a vX.Y.Z -m "Release X.Y.Z (message)"
+                tag_msg = f"Release {stag[1:]}"
+                subprocess.run(["git", "tag", "-a", stag, "-m", tag_msg])
                 print(f" >>> '{stag}' successfully added")
                 print("Updated tags:")
                 subprocess.run(["git", "tag"])

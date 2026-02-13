@@ -73,6 +73,7 @@ git commit -m "Message"
 ```bash
 git tag -a vX.Y.Z -m "Release X.Y.Z (message)"
 git push origin main
+git push origin --tags
 ```
 
 ## Cloning
@@ -185,7 +186,10 @@ Or simply:
 ```bash
 git push
 ```
-
+Then append the tags
+```bash
+git push origin --tags
+```
 
 ### Tags convention
 
