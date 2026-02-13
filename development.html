@@ -463,19 +463,19 @@ See more details in the sections below.</p>
 <ol class="arabic simple" start="8">
 <li><p>Apply style:</p></li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>black<span class="w"> </span>.
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>dev.style
 </pre></div>
 </div>
 <ol class="arabic simple" start="9">
-<li><p>Build docs (locally_:</p></li>
+<li><p>Build docs (locally):</p></li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>docs.build<span class="w"> </span>--open
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>dev.docs<span class="w"> </span>--open
 </pre></div>
 </div>
 <ol class="arabic simple" start="10">
 <li><p>If previous passed, run all CI-based tests:</p></li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>tests.run
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>dev.tests
 </pre></div>
 </div>
 <ol class="arabic simple" start="12">
@@ -509,8 +509,8 @@ git<span class="w"> </span>clone<span class="w"> </span>https://github.com/<span
 </pre></div>
 </div>
 </section>
-<section id="installing">
-<h2>Installing<a class="headerlink" href="#installing" title="Link to this heading">#</a></h2>
+<section id="installing-as-a-developer">
+<h2>Installing as a developer<a class="headerlink" href="#installing-as-a-developer" title="Link to this heading">#</a></h2>
 <p>For developing, it’s recommended to set up a python
 <strong>Virtual Environment</strong> (<code class="docutils literal notranslate"><span class="pre">venv</span></code>) locally for developing the repo.
 This is best for avoiding falling into a <a class="reference external" href="https://en.wikipedia.org/wiki/Dependency_hell">dependency hell</a> with your
@@ -666,14 +666,13 @@ with the interpretations below.</p>
 <blockquote>
 <div><p>from the repo root, under the venv session</p>
 </div></blockquote>
+<p>The built-in wrapper is:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>dev.style
+</pre></div>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Unformatted contributions are not going to pass because GitHub checks for style
-consistency.</p>
-</div>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p>There are tools for automating <code class="docutils literal notranslate"><span class="pre">black</span></code> before commit. See <a class="reference external" href="https://pre-commit.com/">https://pre-commit.com/</a></p>
+<p>Unformatted contributions are not going to pass because GitHub checks for style consistency.</p>
 </div>
 </section>
 <hr class="docutils" />
@@ -686,8 +685,8 @@ consistency.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sphinx-build<span class="w"> </span>-b<span class="w"> </span>html<span class="w"> </span>.<span class="se">\d</span>ocs<span class="w"> </span>.<span class="se">\d</span>ocs<span class="se">\_</span>build<span class="w"> </span>--write-all
 </pre></div>
 </div>
-<p>For automating tasks before and after building, consider run:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>docs.build<span class="w"> </span>--open
+<p>The built-in wrapper is:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>dev.docs<span class="w"> </span>--open
 </pre></div>
 </div>
 <div class="admonition important">
@@ -722,8 +721,21 @@ consistency.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>tests.unit.test_module
 </pre></div>
 </div>
-<p>Alternatively, consider run the utility available in the repository:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>tests.run<span class="w"> </span>--which<span class="w"> </span><span class="s2">&quot;unit&quot;</span>
+<p>The built-in wrapper is:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>dev.tests
+</pre></div>
+</div>
+<p>Variations include:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>dev.tests<span class="w"> </span>--which<span class="w"> </span><span class="s2">&quot;unit&quot;</span>
+</pre></div>
+</div>
+<p>For benchmarks (run this locally)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>dev.tests<span class="w"> </span>--which<span class="w"> </span><span class="s2">&quot;bcmk&quot;</span>
+</pre></div>
+</div>
+<p>For all tests:
+For benchmarks (run this locally)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>dev.tests<span class="w"> </span>--all
 </pre></div>
 </div>
 <div class="admonition seealso">
@@ -741,13 +753,9 @@ A template for this is provided in <code class="docutils literal notranslate"><s
 <p>Benchmark tests are unit tests related to full-integration of features,
 sometimes associated with input and output data. Some benchmark tests
 will install heavy datasets from provided URLs.</p>
-<p>For convenience, consider run the utility available in the repository:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>tests.run<span class="w"> </span>--which<span class="w"> </span><span class="s2">&quot;bcmk&quot;</span>
-</pre></div>
-</div>
 <section id="enable-benchmark-tests">
 <h4>Enable benchmark tests<a class="headerlink" href="#enable-benchmark-tests" title="Link to this heading">#</a></h4>
-<p>For running benchmark tests, they must be enabled manually. This is
+<p>For running benchmark tests, they must be enabled. This is
 because benchmarks may take too long and can deplete resources for CI services.
 Once enabled, just run the unit tests as usual.</p>
 <p>Enabling benchmarks on Unix:</p>
@@ -859,7 +867,7 @@ Once enabled, just run the unit tests as usual.</p>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cloning">Cloning</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing">Installing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-as-a-developer">Installing as a developer</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#versioning">Versioning</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#versioning-cycle">Versioning cycle</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#publishing">Publishing</a></li>
