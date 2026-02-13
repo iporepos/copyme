@@ -244,8 +244,8 @@ def main():
         elif s == "y":
             subprocess.run(["git", "add", "."])
             handle_commit()
-            handle_tag()
-            handle_push()
+            stag = handle_tag()
+            handle_push(stag)
 
         elif s == "n":
             continue
