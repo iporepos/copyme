@@ -88,8 +88,14 @@ def main():
     while True:
         subprocess.run(["clear"])
 
+        print("\n")
+        print(50 * "=")
+        print("Sphinx docs")
         build_docs()
 
+        print("\n")
+        print(50 * "=")
+        print("Unit tests")
         run_tests()
 
         print("\n")
@@ -105,8 +111,12 @@ def main():
         print("\n")
         print(50 * "=")
         subprocess.run(["git", "status"])
-
-        s = fork(message="Add new changes?", exit_option="exit", clear_option=False)
+        print("\n\n")
+        s = fork(
+            message="Add/commit/push new changes?",
+            exit_option="exit",
+            clear_option=False,
+        )
 
         if s == "exit":
             exiting()
@@ -116,6 +126,7 @@ def main():
             subprocess.run(["git", "add", "."])
             git_commit()
             git_tag()
+            git_push()
 
         elif s == "n":
             continue
