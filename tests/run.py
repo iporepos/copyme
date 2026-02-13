@@ -93,7 +93,6 @@ def main():
     run_bcmk = False
 
     if args.which == "unit":
-        print("ok")
         run_unit = True
 
     if args.which == "bcmk":

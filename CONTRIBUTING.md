@@ -1,14 +1,79 @@
 # Development
 
 This section provides guidance for those who wish to contribute to the project.
-It includes instructions for setting up the development environment, cloning the repository, installing the project in development mode, running tests, and building the documentation.
+It includes instructions for setting up the development environment, cloning the 
+repository, installing the project in development mode, running tests, 
+and building the documentation.
 
- To ensure that new features and changes adhere to project standards, maintain quality, and keep the documentation up to date, contributors are required to follow:
+ To ensure that new features and changes adhere to project standards, 
+ maintain quality, and keep the documentation up to date, 
+ contributors are required to follow:
 
 * Style-consistent formatting;
 * Documentation-oriented practices;
 * Test-driven development;
 
+
+## Minimal Workflow
+
+This is a quick guide for a development protocol. 
+Hence, some important but obvious steps are ommited. 
+See more details in the sections below.
+
+### Setup
+
+1. Clone the repository to a local branch;
+
+```bash
+git clone https://github.com/{username}/{repository}.git
+``` 
+
+2. Install dependencies in dev mode:
+
+```bash
+python -m pip install -e .[dev,docs]
+```
+
+### Development loop
+
+3. Develop features under the ``./src/{repository}/`` folder;
+4. Develop unit tests for the features under ``./tests/unit`` or ``./tests/bcmk``;
+5. Document features directly using docstrings;
+6. Document features in the API by editing ``./docs/api.rst`` file;
+7. If ready, proceed to checkout. Repeat otherwise.
+
+### Checkout
+
+8. Apply style:
+
+```bash
+black .
+```
+
+9. Build docs (locally_:
+
+```bash
+python -m docs.build --open
+```
+
+10. If previous passed, run all CI-based tests:
+
+```bash
+python -m tests.run
+```
+
+12. If previous step passed, stage and commit;
+
+```bash
+git add .
+git commit -m "Message"
+```
+15. If appropriate, tag and publish.
+
+```bash
+git tag -a vX.Y.Z -m "Release X.Y.Z (message)"
+git push origin main
+```
 
 ## Cloning
 
@@ -22,8 +87,8 @@ Of course, Git must be set as the version control system
 Alternatively, clone via terminal:
 
 ```bash
-# [CHECK THIS] adapt this for branches or other repos
-git clone https://github.com/iporepos/copyme.git
+# [CHANGE THIS] set username, repository and (optional) branch
+git clone https://github.com/{username}/{repository}.git
 ``` 
 
 ## Installing
@@ -39,7 +104,6 @@ Of course, you need Python installed in your system
 
 Move to the repo root folder:
 
-
 ```bash
 # [CHANGE THIS] set your own actual local path 
 cd ./path/to/{thislib}
@@ -51,9 +115,7 @@ Create a python `venv`:
 python -m venv .venv
 ```
 
-Activate the `venv` session.
-
-On Unix (Linux/Mac):
+Activate the `venv` session. On Unix (Linux/Mac):
 
 ```bash
 source .venv/bin/activate
@@ -63,6 +125,7 @@ Activate the `venv` on Windows:
 ```bash
 . .venv\Scripts\Activate.ps1
 ```
+
 Now, under the `venv` session, install all
 dependencies in editable mode `-e` (including `dev` and `docs` dependencies with `.[dev, docs]`):
 
@@ -74,42 +137,91 @@ developing and documentation.
 
 ---
 
-## Versions
+## Versioning
 
-### Semantic Versioning Policy
+Versioning system of the project is based on ``git`` and the remote 
+is hosted in ``github``. 
 
-This project follows Semantic Versioning (`MAJOR.MINOR.PATCH`) with the interpretations below.
 
-#### Major `X.y.z` — Project Maturity Level
+### Versioning cycle
 
-- **0.x.x — Experimental**
+Before and after a development session, a health practice is to run:
+
+```bash
+git status
+```
+Considering the status output, add all changed files to the staging area:
+
+```bash
+git add .
+```
+After some substantial development, consider commit 
+the changes to the local git system:
+
+```bash
+git commit -m "Commit message (eg, 'Bug Fixes')"
+```
+Repeat the cycle until if feels ready to publish to the remote host.
+
+### Publishing
+
+Before publishing, a health practice is to check the tags available:
+
+```bash
+git tag
+```
+Considering the output, decide a new tag and add it:
+
+```bash
+git tag -a vX.Y.Z -m "Release X.Y.Z (message)"
+```
+
+After tagging, publish explicitly:
+
+```bash
+git push origin main
+```
+Or simply:
+```bash
+git push
+```
+
+
+### Tags convention
+
+This project tags follows Semantic Versioning (`vMAJOR.MINOR.PATCH`) 
+with the interpretations below.
+
+#### Major `vX.y.z` — Project Maturity Level
+
+- **v0.x.x — Experimental**
   - Playground for exploring architecture and project layout.
   - Breaking changes are expected.
 
-- **1.x.x — Stable Foundation**
+- **v1.x.x — Stable Foundation**
   - Production-ready core architecture.
   - Actively developed.
   - Backward compatibility is expected.
 
-- **2.x.x — Next Generation**
+- **v2.x.x — Next Generation**
   - May introduce new syntax or paradigms.
-  - Can be incompatible with `1.x.x`.
+  - Can be incompatible with `v1.x.x`.
   - More mature, better documented, and more stable.
 
-#### Minor `x.Y.z` — Milestones
+#### Minor `vx.Y.z` — Milestones
 
 - Major feature additions.
 - Large refactors within the same architecture.
 - Treated as logical restore points.
 
-#### Patch `x.y.Z` — Maintenance
+#### Patch `vx.y.Z` — Maintenance
 
 - Bug fixes.
 - Small improvements.
 - Documentation corrections.
 - No behavioral changes.
 
-### Version Names
+### Releases
 
 Releases may receive human-readable names. Recommended pattern:
 
@@ -118,13 +230,13 @@ Releases may receive human-readable names. Recommended pattern:
 
 Example: Mesopotamia CITY — RULER
 
-* 0.1.0 — Uruk Enmerkar
-* 0.2.0 — Uruk Gilgamesh
-* 1.0.0 — Babylon Hammurabi
-* 1.1.0 — Babylon Samsu-iluna
-* 1.2.0 — Babylon Abi-Eshuh
-* 2.0.0 — Nineveh Sennacherib
-* 2.1.0 — Nineveh Esarhaddon
+* v0.1.0 — Uruk Enmerkar
+* v0.2.0 — Uruk Gilgamesh
+* v1.0.0 — Babylon Hammurabi
+* v1.1.0 — Babylon Samsu-iluna
+* v1.2.0 — Babylon Abi-Eshuh
+* v2.0.0 — Nineveh Sennacherib
+* v2.1.0 — Nineveh Esarhaddon
 
 ---
 

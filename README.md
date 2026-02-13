@@ -1,11 +1,10 @@
+![Style Status](https://github.com/iporepos/copyme/actions/workflows/style.yaml/badge.svg)
+![Docs Status](https://github.com/iporepos/copyme/actions/workflows/docs.yaml/badge.svg)
+![Tests Status](https://github.com/iporepos/copyme/actions/workflows/tests.yaml/badge.svg)
 ![Top Language](https://img.shields.io/github/languages/top/iporepos/copyme)
 ![Status](https://img.shields.io/badge/status-development-yellow.svg)
 [![Code Style](https://img.shields.io/badge/style-black-000000.svg)](https://github.com/psf/black)
 [![Documentation](https://img.shields.io/badge/docs-online-blue)](https://iporepos.github.io/copyme/)
-![Style Status](https://github.com/iporepos/copyme/actions/workflows/style.yaml/badge.svg)
-![Docs Status](https://github.com/iporepos/copyme/actions/workflows/docs.yaml/badge.svg)
-![Tests Status](https://github.com/iporepos/copyme/actions/workflows/tests.yaml/badge.svg)
-
 
 <a logo>
 <img src="https://raw.githubusercontent.com/iporepos/copyme/master/docs/figs/logo.png" height="130" width="130">
@@ -37,7 +36,10 @@ When copying files from this repo, remember that they are _templates_. So:
 
 # Configuration files
 
-This repository relies on several **configuration files** that are essential for the proper functioning of the template. Each file has a specific role, and some of them work together, so they should be edited thoughtfully. Below is an overview of the main configuration files and what you should know about them.
+This repository relies on several **configuration files** that are essential for the proper 
+functioning of the template. Each file has a specific role, and some of them work together, 
+so they should be edited thoughtfully. Below is an overview of the main configuration files 
+and what you should know about them.
 
 
 | File                               | Purpose | Key Notes |
@@ -57,7 +59,7 @@ This repository relies on several **configuration files** that are essential for
 > Online documentation build may require additional setup — check `.github/workflows/docs.yml`.
 
 > [!IMPORTANT]  
-> Continous Integration (CI) steup allows for check-ups for commits and not allowing bad code
+> Continous Integration (CI) setup allows for check-ups for commits and not allowing bad code
 > to be pushed to the main branch. So Style, Docs and Tests must always pass.
 
 ---
@@ -70,7 +72,7 @@ This layout is known as `src` layout, since it stores the source code under a `s
 > See more on [flat vs src layout](https://packaging.python.org/en/latest/discussions/src-layout-vs-flat-layout/) 
 
 ```txt
-copyme/
+{repository}/
 │
 ├── LICENSE
 ├── README.md                     # [CHECK THIS] this file (landing page)
@@ -78,7 +80,7 @@ copyme/
 ├── pyproject.toml                # [CHECK THIS] configuration of python project
 ├── MANIFEST.in                   # [CHECK THIS] configuration of source distribution
 │
-├── .venv/                        # [ignored] virtual environment (recommended for development)
+├── .venv/                        # [ignored] virtual environment
 │
 ├── .github/                      # github folder
 │    └── workflows/               # folder for continuous integration services
@@ -87,18 +89,18 @@ copyme/
 │         └── docs.yml            # [CHECK THIS] configuration file for docs build workflow
 │
 ├── src/                          # source code folder
-│    ├── copyme.egg-info          # [ignored] [generated] files for local development
-│    └── copyme/                  # [CHANGE THIS] source code root
+│    ├── {repository}.egg-info          # [ignored] [generated] files for local development
+│    └── {repository}/                  # [CHANGE THIS] source code root
 │         ├── __init__.py         # template init file
 │         ├── module.py           # template module
 │         ├── ...                 # develop your modules
 │         ├── mypackage/          # template package
-│         │    ├── __init__.py
 │         │    └── submodule.py
 │         └── data/               # run-time data
 │              └── src_data.txt   # dummy data file
 │
 ├── tests/                        # testing code folder
+│    ├── run.py                   # test master script
 │    ├── conftest.py              # [CHECK THIS] configuration file of tests
 │    ├──unit/                     # unit tests package     
 │    │    ├── __init__.py
@@ -113,7 +115,7 @@ copyme/
 │    └── outputs/                 # [ignored] tests outputs
 │
 ├── docs/                         # documentation folder
-│    ├── docs_update.rst          # updating script
+│    ├── build.py                 # docs master script
 │    ├── about.rst                # info about the repo
 │    ├── api.rst                  # api reference using sphinx autodoc
 │    ├── conf.py                  # [CHECK THIS] configuration file for sphinx
@@ -130,7 +132,7 @@ copyme/
 │    │    └── docs.txt            # dummy data file
 │    ├── generated/               # [generated] sphinx created files 
 │    ├── _templates/              # [ignored] [generated] sphinx created stuff
-│    ├── _static/                 # [ignored] [generated] sphinx created stuff
+│    ├── _static/                 # [generated] sphinx created stuff
 │    └── _build/                  # [ignored] [generated] sphinx build
 │
 └── examples/                     # (optional) learning resources 
