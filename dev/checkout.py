@@ -48,7 +48,7 @@ def user_input(message="Enter input"):
         print("\n")
         s_inp = input(s).strip()
         s_msg = f"Confirm input: '{s_inp}' ?"
-        decision = fork(message=s_msg, exit_option="cancel")
+        decision = fork(message=s_msg, exit_option="cancel", clear_option=False)
 
         if decision == "y":
             print(" >>> input confirmed.")
@@ -94,6 +94,7 @@ def main():
         elif s == "y":
             subprocess.run(["git", "add", "."])
             git_commit()
+            git_tag()
 
         elif s == "n":
             continue
@@ -114,12 +115,38 @@ def git_commit():
             s_msg = "Enter commit message"
             git_msg = user_input(s_msg)
             if git_msg is None:
-                print(" >>> Commit aborted.")
+                print(" >>> Commit cancelled.")
                 time.sleep(1)
             else:
                 subprocess.run(["git", "commit", "-m", f'"{git_msg}"'])
-                print(f" >>> '{git_msg}' successfully commited")
+                print(f" >>> '{git_msg}' successfully commited.")
                 time.sleep(3)
+            break
+
+        elif s == "n":
+            break
+
+
+def git_tag():
+    while True:
+        print("\n")
+        print(50 * "-")
+        print("Current tags:")
+        subprocess.run(["git", "tag"])
+        s = fork(message="Enter new tag?", exit_option=None, clear_option=False)
+        if s == "y":
+            s_msg = "Enter new tag"
+            stag = user_input(s_msg)
+            if stag is None:
+                print(" >>> Tagging cancelled.")
+                time.sleep(1)
+            else:
+                print(" >>> develop code")
+                print(f" >>> '{stag}' successfully added")
+                print("Updated tags:")
+                subprocess.run(["git", "tag"])
+                time.sleep(3)
+
             break
 
         elif s == "n":
