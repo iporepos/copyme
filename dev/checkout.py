@@ -83,59 +83,6 @@ def run_tests():
     time.sleep(3)
 
 
-def main():
-
-    while True:
-        subprocess.run(["clear"])
-
-        print("\n")
-        print(50 * "=")
-        print("Sphinx docs")
-        build_docs()
-
-        print("\n")
-        print(50 * "=")
-        print("Unit tests")
-        run_tests()
-
-        print("\n")
-        print(50 * "=")
-        print("Black style")
-        black_all()
-
-        print("\n")
-        print(50 * "=")
-        print("Tags")
-        subprocess.run(["git", "tag"])
-
-        print("\n")
-        print(50 * "=")
-        subprocess.run(["git", "status"])
-        print("\n\n")
-        s = fork(
-            message="Add/commit/push new changes?",
-            exit_option="exit",
-            clear_option=False,
-        )
-
-        if s == "exit":
-            exiting()
-            break
-
-        elif s == "y":
-            subprocess.run(["git", "add", "."])
-            git_commit()
-            git_tag()
-            git_push()
-
-        elif s == "n":
-            continue
-
-        elif s == "clear":
-            subprocess.run(["clear"])
-            continue
-
-
 def git_commit():
     while True:
         print("\n")
@@ -230,6 +177,70 @@ def exiting():
     print(" >>> exiting ...")
     time.sleep(1)
     subprocess.run(["clear"])
+
+
+def main():
+
+    while True:
+        subprocess.run(["clear"])
+        print("\n")
+        print(50 * "#")
+        print("CHECK OUT")
+        print("\n")
+
+        s = fork("Build Docs and Run Tests?", "exit", False)
+        if s == "y":
+            print("\n")
+            print(50 * "=")
+            print("Sphinx docs")
+            build_docs()
+
+            print("\n")
+            print(50 * "=")
+            print("Unit tests")
+            run_tests()
+
+        elif s == "exit":
+            exiting()
+            break
+
+        print("\n")
+        print(50 * "=")
+        print("Black style")
+        black_all()
+
+        print("\n")
+        print(50 * "=")
+        print("Git Tags")
+        subprocess.run(["git", "tag"])
+
+        print("\n")
+        print(50 * "=")
+        print("Git Status")
+        subprocess.run(["git", "status"])
+        print("\n\n")
+        s = fork(
+            message="Add/commit/push new changes?",
+            exit_option="exit",
+            clear_option=False,
+        )
+
+        if s == "exit":
+            exiting()
+            break
+
+        elif s == "y":
+            subprocess.run(["git", "add", "."])
+            git_commit()
+            git_tag()
+            git_push()
+
+        elif s == "n":
+            continue
+
+        elif s == "clear":
+            subprocess.run(["clear"])
+            continue
 
 
 if __name__ == "__main__":
