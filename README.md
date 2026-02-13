@@ -1,4 +1,4 @@
-![Dist Status](https://github.com/iporepos/copyme/actions/workflows/dist.yaml/badge.svg)
+![PyPI Status](https://github.com/iporepos/copyme/actions/workflows/dist.yaml/badge.svg)
 ![Style Status](https://github.com/iporepos/copyme/actions/workflows/style.yaml/badge.svg)
 ![Docs Status](https://github.com/iporepos/copyme/actions/workflows/docs.yaml/badge.svg)
 ![Tests Status](https://github.com/iporepos/copyme/actions/workflows/tests.yaml/badge.svg)
@@ -6,6 +6,8 @@
 ![Status](https://img.shields.io/badge/status-development-yellow.svg)
 [![Code Style](https://img.shields.io/badge/style-black-000000.svg)](https://github.com/psf/black)
 [![Documentation](https://img.shields.io/badge/docs-online-blue)](https://iporepos.github.io/copyme/)
+[![PyPI Downloads](https://img.shields.io/pypi/dm/copyme.svg?label=PyPI%20downloads)](
+https://pypi.org/project/copyme/)
 
 <a logo>
 <img src="https://raw.githubusercontent.com/iporepos/copyme/master/docs/figs/logo.png" height="130" width="130">
