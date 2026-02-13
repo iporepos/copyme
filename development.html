@@ -656,6 +656,83 @@ with the interpretations below.</p>
 </section>
 </section>
 <hr class="docutils" />
+<section id="packaging">
+<h2>Packaging<a class="headerlink" href="#packaging" title="Link to this heading">#</a></h2>
+<p>This project relies on the PyPI platform for package distribution.</p>
+<section id="first-time-distribution-protocols">
+<h3>First-time distribution protocols<a class="headerlink" href="#first-time-distribution-protocols" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Register and save API tokens from https://pypi.org/ and https://test.pypi.org.</p></li>
+<li><p>Install packaging utilities:</p></li>
+</ol>
+<p>For building the distribution:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>build
+</pre></div>
+</div>
+<p>For uploading to PyPI</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>twine
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Build distro</p></li>
+</ol>
+<p>Cleanup first</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Remove-Item</span> <span class="n">-Recurse</span> <span class="n">-Force</span> <span class="n">dist</span><span class="p">,</span> <span class="n">build</span><span class="p">,</span> <span class="p">*.</span><span class="n">egg-info</span>
+</pre></div>
+</div>
+<p>Run the build command</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>build
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dist</span><span class="o">/</span>
+  <span class="n">yourpkg</span><span class="o">-</span><span class="mf">0.1.0</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+  <span class="n">yourpkg</span><span class="o">-</span><span class="mf">0.1.0</span><span class="o">-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>these are the packages in the repo. This folder is ignored by git.</p>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>Validade build</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>twine<span class="w"> </span>check<span class="w"> </span>dist/*
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Publish on TestPyPI</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>twine<span class="w"> </span>upload<span class="w"> </span>--repository<span class="w"> </span>testpypi<span class="w"> </span>dist/*
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Use the token from TestPyPI</p>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Check test package</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--index-url<span class="w"> </span>https://test.pypi.org/simple<span class="w"> </span>--extra-index-url<span class="w"> </span>https://pypi.org/simple<span class="w"> </span>&lt;yourpkg&gt;<span class="o">==</span>Z.Y.X
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>Publish on PyPI:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>twine<span class="w"> </span>upload<span class="w"> </span>dist/*
+</pre></div>
+</div>
+<ol class="arabic simple" start="8">
+<li><p>Check package installation in a clear environment</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>&lt;yourpkg&gt;
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h3>First-time distribution protocols<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+</section>
+</section>
+<hr class="docutils" />
 <section id="style">
 <h2>Style<a class="headerlink" href="#style" title="Link to this heading">#</a></h2>
 <p>In this project, we enforce using <a class="reference external" href="https://black.readthedocs.io">Black</a> to ensure a consistent code style.</p>
@@ -878,6 +955,11 @@ Once enabled, just run the unit tests as usual.</p>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#releases">Releases</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#packaging">Packaging</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-time-distribution-protocols">First-time distribution protocols</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">First-time distribution protocols</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#style">Style</a></li>
