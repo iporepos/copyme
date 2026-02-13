@@ -167,8 +167,6 @@ def git_tag():
                 time.sleep(1)
 
             else:
-                print(" >>> develop code")
-                # git tag -a vX.Y.Z -m "Release X.Y.Z (message)"
                 tag_msg = f"Release {stag[1:]}"
                 subprocess.run(["git", "tag", "-a", stag, "-m", tag_msg])
                 print(f" >>> '{stag}' successfully added")
@@ -179,6 +177,37 @@ def git_tag():
             break
 
         elif s == "n":
+            break
+
+        elif s == "clear":
+            subprocess.run(["clear"])
+            continue
+
+
+def git_push():
+    while True:
+        print("\n")
+        print(50 * "-")
+        print("Publish")
+
+        s = fork(
+            message="Publish main branch to remote?",
+            exit_option=None,
+            clear_option=True,
+        )
+
+        if s == "y":
+            subprocess.run(["git", "push", "origin", "main"])
+            print(f" >>> main branch successfully published")
+            time.sleep(1)
+            subprocess.run(["git", "push", "origin", "--tags"])
+            print(f" >>> tags successfully published")
+            time.sleep(1)
+
+            break
+
+        elif s == "n":
+            print(f" >>> publishing cancelled")
             break
 
         elif s == "clear":
