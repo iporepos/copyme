@@ -140,26 +140,27 @@ def handle_tag():
             if stag is None:
                 print(" >>> Tagging cancelled.")
                 time.sleep(1)
+                return None
 
-            else:
-                tag_msg = f"Release {stag[1:]}"
-                subprocess.run(["git", "tag", "-a", stag, "-m", tag_msg])
-                print(f" >>> '{stag}' successfully added")
-                print("Updated tags:")
-                subprocess.run(["git", "tag"])
-                time.sleep(3)
+            tag_msg = f"Release {stag[1:]}"
+            subprocess.run(["git", "tag", "-a", stag, "-m", tag_msg])
 
-            break
+            print(f" >>> '{stag}' successfully added")
+            print("Updated tags:")
+            subprocess.run(["git", "tag"])
+            time.sleep(3)
+
+            return stag  # ← return the created tag
 
         elif s == "n":
-            break
+            return None  # ← explicitly return None
 
         elif s == "clear":
             subprocess.run(["clear"])
             continue
 
 
-def handle_push():
+def handle_push(stag=None):
     while True:
         print("\n")
         print(50 * "-")
@@ -172,12 +173,15 @@ def handle_push():
         )
 
         if s == "y":
+
             subprocess.run(["git", "push", "origin", "main"])
             print(f" >>> main branch successfully published")
             time.sleep(1)
-            subprocess.run(["git", "push", "origin", "--tags"])
-            print(f" >>> tags successfully published")
-            time.sleep(1)
+
+            if stag is not None:
+                subprocess.run(["git", "push", "origin", stag])
+                print(f" >>> tag {stag} successfully published")
+                time.sleep(1)
 
             break
 

@@ -242,6 +242,74 @@ Example: Mesopotamia CITY — RULER
 * v2.0.0 — Nineveh Sennacherib
 * v2.1.0 — Nineveh Esarhaddon
 
+
+---
+
+## Packaging
+
+This project relies on the PyPI platform for package distribution. 
+
+### First-time distribution protocols
+
+1. Register and save API tokens from https://pypi.org/ and https://test.pypi.org. 
+2. Install packaging utilities:
+
+For building the distribution:
+```bash
+python -m pip install build
+```
+For uploading to PyPI
+```bash
+python -m pip install twine
+```
+3. Build distro
+
+Cleanup first
+```powershell
+Remove-Item -Recurse -Force dist, build, *.egg-info
+```
+Run the build command
+```bash
+python -m build
+```
+Output:
+
+```
+dist/
+  yourpkg-0.1.0.tar.gz
+  yourpkg-0.1.0-py3-none-any.whl
+```
+> these are the packages in the repo. This folder is ignored by git.
+
+4. Validade build
+```bash
+twine check dist/*
+```
+5. Publish on TestPyPI
+```bash
+twine upload --repository testpypi dist/*
+```
+```{warning}
+Use the token from TestPyPI
+```
+6. Check test package
+
+```bash
+python -m pip install --index-url https://test.pypi.org/simple --extra-index-url https://pypi.org/simple <yourpkg>==Z.Y.X
+```
+
+7. Publish on PyPI:
+```bash
+twine upload dist/*
+```
+
+8. Check package installation in a clear environment
+```bash
+python -m pip install <yourpkg>
+```
+
+### First-time distribution protocols
+
 ---
 
 ## Style
