@@ -123,19 +123,16 @@ This layout is known as `src` layout, since it stores the source code under a `s
 │    ├── examples_01.ipynb    
 │    └── examples_02.ipynb            
 │
-├── tests/                        # testing code folder
-│    ├── conftest.py              # [CHECK THIS] configuration file of tests
-│    ├──unit/                     # unit tests package     
-│    │    └── test_module.py      # template module for unit tests
-│    ├── bcmk/                    # benchmarking tests package
-│    │    └── test_bcmk.py        # template module for benchmarking tests
-│    ├── data/                    # test-only data
-│    │     ├── test_data.csv
-│    │     ├── datasets.csv       # table of remote datasets
-│    │     └── dataset1/          # [ignored] subfolders in data
-│    └── outputs/                 # [ignored] tests outputs
-
-│
-
+└── tests/                        # testing code folder
+     ├── conftest.py              # [CHECK THIS] configuration file of tests
+     ├──unit/                     # unit tests package     
+     │    └── test_module.py      # template module for unit tests
+     ├── bcmk/                    # benchmarking tests package
+     │    └── test_bcmk.py        # template module for benchmarking tests
+     ├── data/                    # test-only data
+     │     ├── test_data.csv
+     │     ├── datasets.csv       # table of remote datasets
+     │     └── dataset1/          # [ignored] subfolders in data
+     └── outputs/                 # [ignored] tests outputs
 
 ```

@@ -10,7 +10,9 @@ Overview
 
 .. develop some entry notes [CHANGE THIS]:
 
-For casual users, the installation instructions allow quick setup and testing of basic functionality. Additional resources, including example Jupyter notebooks and live interactive versions, are available to explore features and usage patterns in detail.
+For casual users, the installation instructions allow quick setup and testing of
+basic functionality. Additional resources, including example Jupyter notebooks
+and live interactive versions, are available to explore features and usage patterns in detail.
 
 .. seealso::
 
@@ -22,14 +24,48 @@ For casual users, the installation instructions allow quick setup and testing of
 Installation
 ***********************************************************************
 
-.. develop installation instructions [CHANGE THIS]:
 
-For causal users, install ``copyme`` to a Python 3 environment via terminal:
+Install as a Python package
+============================================
 
+For Python regular users, install the latest package deploy
+to a Python 3 environment via pip:
+
+.. code-block:: console
+
+    python -m pip install copyme
+
+Or any desired branch or version via github url:
 
 .. code-block:: console
 
     python -m pip install git+https://github.com/iporepos/copyme.git@main
+
+Install in Windows 11
+============================================
+
+For users seeking only the tool experience in Windows 11:
+
+1. Make sure the latest Python 3 is installed and added to PATH: https://www.python.org
+
+2. Download the installer PowerShell file ``install-copyme.ps1`` from the GitHub repository;
+
+3. Right-click the installer file and click the option ``Run with PowerShell``;
+
+4. Follow the instructions prompted until the end;
+
+Comments:
+
+The app will live in ``C:\Users\{You}\AppData\Local\copyme``.
+
+To check if the app is alive, open ``PowerShell`` and type:
+
+.. code-block:: console
+
+    copyme check
+
+The output should result in no error or warning.
+
 
 
 .. _guides:
