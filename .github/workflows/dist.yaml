@@ -58,11 +58,9 @@ jobs:
       - name: Build package
         run: python -m build
 
-      # Step 5: Upload conditionally
+      # Step 5: Upload
       # -----------------------------------------------------------------
       - name: Publish to PyPI
-        # only if there is a secret
-        if: secrets.PYPI_API_TOKEN != ''
         run: twine upload dist/*
         env:
           TWINE_USERNAME: __token__
