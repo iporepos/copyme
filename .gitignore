@@ -23,7 +23,6 @@
 
 # Local configs [CHECK THIS]
 # -----------------------------------------------------------------------
-.pre-commit-config.yaml
 # ... [ADD MORE IF NEEDED]
 
 # Non-sense script files
