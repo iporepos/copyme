@@ -249,7 +249,9 @@ Example: Mesopotamia CITY — RULER
 
 This project relies on the PyPI platform for package distribution. 
 
-### First-time distribution protocols
+### First-time distribution workflow
+
+As a first time distribution, manual workflow is recommended.
 
 1. Register and save API tokens from https://pypi.org/ and https://test.pypi.org. 
 2. Install packaging utilities:
@@ -292,7 +294,7 @@ twine upload --repository testpypi dist/*
 ```{warning}
 Use the token from TestPyPI
 ```
-6. Check test package
+6. Check test package under a clear environment
 
 ```bash
 python -m pip install --index-url https://test.pypi.org/simple --extra-index-url https://pypi.org/simple <yourpkg>==Z.Y.X
@@ -308,7 +310,16 @@ twine upload dist/*
 python -m pip install <yourpkg>
 ```
 
-### First-time distribution protocols
+### Continous distribution
+
+An automated system is set for continous distribution via GitHub Actions.
+The workflow file lives in ``.github/workflows/dist.yaml`` and 
+is only triggered by a new tag being pushed.
+
+```{warning}
+To work properly, the API token for PyPI must be included in GitHub 
+repository secrets as PYPI_API_TOKEN.
+```
 
 ---
 
