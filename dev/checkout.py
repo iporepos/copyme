@@ -4,9 +4,13 @@
 # See pyproject.toml for authors/maintainers.
 # See LICENSE for license details.
 """
-todo: docstring
+Master CLI tool for checkout after development sessions
 
 """
+# todo apply clean code principles
+# todo this workflow needs to be more stable in edge cases
+# todo handle when there is no action to stage, etc
+
 # IMPORTS
 # ***********************************************************************
 
@@ -19,6 +23,10 @@ import time
 
 # FUNCTIONS
 # =======================================================================
+def _heading(message, symbol="-"):
+    print("\n")
+    print(50 * symbol)
+    print(message)
 
 
 def fork(message="Chose action", exit_option="exit", clear_option=True):
@@ -73,37 +81,28 @@ def user_input(message="Enter input"):
 
 
 def run_style():
-    print("\n")
-    print(50 * "=")
-    print("Black style")
+    _heading("Black style", "=")
     subprocess.run(["black", "."])
     return None
 
 
 def build_docs():
-    print("\n")
-    print(50 * "=")
-    print("Sphinx docs")
+    _heading("Sphinx docs", "=")
     subprocess.run([sys.executable, "-m", "dev.docs"])
     time.sleep(3)
     return None
 
 
 def run_tests():
-    print("\n")
-    print(50 * "=")
-    print("Unit tests")
-
+    _heading("Unit tests", "=")
     subprocess.run([sys.executable, "-m", "dev.tests"])
-
     time.sleep(3)
     return None
 
 
 def handle_commit():
     while True:
-        print("\n")
-        print(50 * "-")
+        _heading("", "-")
         subprocess.run(["git", "status"])
         s = fork(message="Commit changes?", exit_option=None, clear_option=False)
 
@@ -126,9 +125,8 @@ def handle_commit():
 def handle_tag():
 
     while True:
-        print("\n")
-        print(50 * "-")
-        print("Current tags:")
+
+        _heading("Current tags", "-")
         subprocess.run(["git", "tag"])
 
         s = fork(message="Enter new tag?", exit_option=None, clear_option=False)
@@ -162,10 +160,7 @@ def handle_tag():
 
 def handle_push(stag=None):
     while True:
-        print("\n")
-        print(50 * "-")
-        print("Publish")
-
+        _heading("Publish", "-")
         s = fork(
             message="Publish main branch to remote?",
             exit_option=None,
@@ -175,13 +170,15 @@ def handle_push(stag=None):
         if s == "y":
 
             subprocess.run(["git", "push", "origin", "main"])
+            print("\n")
             print(f" >>> main branch successfully published")
-            time.sleep(1)
+            time.sleep(2)
 
             if stag is not None:
                 subprocess.run(["git", "push", "origin", stag])
+                print("\n")
                 print(f" >>> tag {stag} successfully published")
-                time.sleep(1)
+                time.sleep(2)
 
             break
 
@@ -204,9 +201,7 @@ def main():
 
     while True:
         subprocess.run(["clear"])
-        print("\n")
-        print(50 * "#")
-        print("CHECK OUT")
+        _heading("CHECK OUT", "#")
         print("\n")
 
         s = fork("Build Docs and Run Tests?", "exit", False)
@@ -221,14 +216,10 @@ def main():
 
         run_style()
 
-        print("\n")
-        print(50 * "=")
-        print("Git Tags")
+        _heading("Git Tags", "=")
         subprocess.run(["git", "tag"])
 
-        print("\n")
-        print(50 * "=")
-        print("Git Status")
+        _heading("Git Status", "=")
         subprocess.run(["git", "status"])
         print("\n\n")
         s = fork(
