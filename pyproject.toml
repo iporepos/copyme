@@ -162,8 +162,8 @@ docs = [
 # URLS
 # ***********************************************************************
 [project.urls]
-"Homepage" = "https://github.com/iporepos/copyme" # <-- [CHANGE THIS]
-
+Homepage = "https://iporepos.github.io/copyme"       # Landing page <-- [CHANGE THIS]
+Repository = "https://github.com/iporepos/copyme"    # Source code <-- [CHANGE THIS]
 
 
 # SETUPTOOLS

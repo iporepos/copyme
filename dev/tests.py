@@ -87,6 +87,8 @@ def get_arguments():
 
 def main():
 
+    os.environ["RUN_BENCHMARKS"] = "0"
+
     args = get_arguments()
 
     run_unit = False
@@ -99,10 +101,12 @@ def main():
         run_bcmk = True
 
     if run_unit:
-        s = "tests/unit"
+        s = "tests"  # run all
+        os.environ["RUN_BENCHMARKS"] = "0"
 
     if run_bcmk:
         s = "tests/bcmk"
+
         os.environ["RUN_BENCHMARKS"] = "1"
         if args.xxl:
             os.environ["RUN_BENCHMARKS_XXL"] = "1"
