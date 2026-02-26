@@ -39,7 +39,7 @@ When copying files from this repo, remember that they are _templates_. So:
 
 # Configuration files
 
-This repository relies on several **configuration files** that are essential for the proper 
+This repository relies on some **configuration files** that are essential for the proper 
 functioning of the template. Each file has a specific role, and some of them work together, 
 so they should be edited thoughtfully. Below is an overview of the main configuration files 
 and what you should know about them.
